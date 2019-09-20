@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2019-09-19T11:46:52.211Z</updated>
+  <updated>2019-09-19T13:13:06.753Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -15,34 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://blog.david916.com/2019/09/19/hello-world/"/>
-    <id>http://blog.david916.com/2019/09/19/hello-world/</id>
-    <published>2019-09-19T08:29:34.722Z</published>
-    <updated>2019-09-19T11:46:52.211Z</updated>
-    
-    <content type="html"><![CDATA[<p>I plan to record and share somethings I’ve learned or I am working on in this blog. I am currently a senior student majored in computer science. I am also preparing to get an internship before I graduate from Jinan University on January, 2020, and applying for grad schools later.</p><p>To be continued…</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I plan to record and share somethings I’ve learned or I am working on in this blog. I am currently a senior student majored in computer s
-      
-    
-    </summary>
-    
-    
-      <category term="Life" scheme="http://blog.david916.com/categories/Life/"/>
-    
-    
-      <category term="Introduction" scheme="http://blog.david916.com/tags/Introduction/"/>
-    
-      <category term="随笔" scheme="http://blog.david916.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
   
   <entry>
     <title>Blog搭建记录</title>
@@ -71,6 +43,34 @@
       <category term="Jekyll" scheme="http://blog.david916.com/tags/Jekyll/"/>
     
       <category term="Github" scheme="http://blog.david916.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://blog.david916.com/2019/09/19/hello-world/"/>
+    <id>http://blog.david916.com/2019/09/19/hello-world/</id>
+    <published>2019-09-19T08:29:34.722Z</published>
+    <updated>2019-09-20T12:38:01.494Z</updated>
+    
+    <content type="html"><![CDATA[<p>I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern Arizona University as an exchange student and came back to China on August, 2019. So before I finish my last course and graduate from Jinan University on January 2020, I actually got a couple of months free time, although “free time” is not very accurate because I still need to finish my research project and hopefully I can submit a paper in mid October. I am also applying for grad schools, so I also need to prepare the paperwork and GRE, which I didn’t receive a very good score in my first exam. Meanwhile, I am trying to find a job or internship, so I am also working on Leetcode.</p><p>In this blog, I plan to record and share somethings I’ve learned or I am working on. I see this blog as a conclusion of what I have learned during my four years college life, and a starting point of my career path. I am not sure if anyone will actually notice I have started this blog. If you are reading this, you are very welcome to comment in the comment box below. Currently this blog didn’t have too many content. I will try my best to learn new things and share, so one day maybe if you find something useful in here.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due 
+      
+    
+    </summary>
+    
+    
+      <category term="Life" scheme="http://blog.david916.com/categories/Life/"/>
+    
+    
+      <category term="Introduction" scheme="http://blog.david916.com/tags/Introduction/"/>
+    
+      <category term="随笔" scheme="http://blog.david916.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
