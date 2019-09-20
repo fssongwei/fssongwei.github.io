@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2019-09-19T13:13:06.753Z</updated>
+  <updated>2019-09-20T13:00:27.265Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用R语言随机森林对美国计算机硕士录取结果进行预测</title>
+    <link href="http://blog.david916.com/2019/09/20/%E5%88%A9%E7%94%A8%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%AF%B9%E7%BE%8E%E5%9B%BD%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A0%94%E7%A9%B6%E7%94%9F%E5%BD%95%E5%8F%96%E7%BB%93%E6%9E%9C%E8%BF%9B%E8%A1%8C%E9%A2%84%E6%B5%8B/"/>
+    <id>http://blog.david916.com/2019/09/20/利用随机森林对美国计算机研究生录取结果进行预测/</id>
+    <published>2019-09-20T12:40:11.370Z</published>
+    <updated>2019-09-20T13:00:27.265Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近在申请美国大学的计算机硕士，之前也一直在逛论坛，发现网上有大量往年的录取数据，其中包括很多有用的信息比如说三维情况（GPA，GRE和托福成绩），本科学校信息等等。我就想能不能利用下这些数据进行分析，从而建立一个对录取的预测模型。所以我用Python写了个爬虫（有关爬虫的部分以后可能会在另外一篇文章记录），收集到了七百多条录取数据（具体数据源这里不说，相信准备申请学校的应该都知道），主要是Columbia，CMU和USC的录取数据（暴露了我申请的学校哈哈），然后用随机森林模型对这些数据进行分析并预测。通过对模型进行交叉验证，在某些学校中，模型的预测准确率能达到80%以上，另外一所学校CMU的正确率只有59%，比胡乱预测好不了多少。</p><p>因为最近忙于论文和申请，这篇博文将会不定期更新，稍后我会把收集的数据上传，有兴趣的可以利用这些数据自行进行分析或构建自己的模型。后面有时间我可能会建一个在线预测的网站，把三维条件等信息输进去可以反馈录取的概率。同时要说明的是，美国研究生录取是一个多方面综合考量的过程，仅凭某些量化数据并不能决定一个人录取与否，本人对数据和预测的真实性和准确性概不负责。</p><h3 id="数据清理"><a href="#数据清理" class="headerlink" title="数据清理"></a>数据清理</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;最近在申请美国大学的计算机硕士，之前也一直在逛论坛，发现网上有大量往年的录取数据，其中包括很多有用的信息比如说三维情况（GPA，GRE和托福
+      
+    
+    </summary>
+    
+    
+      <category term="Tech" scheme="http://blog.david916.com/categories/Tech/"/>
+    
+    
+      <category term="机器学习" scheme="http://blog.david916.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="R" scheme="http://blog.david916.com/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://blog.david916.com/2019/09/19/hello-world/"/>
+    <id>http://blog.david916.com/2019/09/19/hello-world/</id>
+    <published>2019-09-19T08:29:34.722Z</published>
+    <updated>2019-09-20T12:38:34.066Z</updated>
+    
+    <content type="html"><![CDATA[<p>I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern Arizona University as an exchange student and came back to China on August, 2019. So before I finish my last course and graduate from Jinan University on January 2020, I actually got a couple of months free time, although “free time” is not very accurate because I still need to finish my research project and hopefully I can submit a paper in mid October. I am also applying for grad schools, so I also need to prepare the paperwork and GRE, which I didn’t receive a very good score in my first exam. Meanwhile, I am trying to find a job or internship, so I am also working on Leetcode.</p><p>In this blog, I plan to record and share somethings I’ve learned or I am working on. I see this blog as a conclusion of what I have learned during my four years college life, and a starting point of my career path. I am not sure if anyone will actually notice I have started this blog. If you are reading this, you are very welcome to comment in the comment box below. Currently this blog didn’t have too many content. I will try my best to learn new things and share, so one day maybe if you find something useful in here.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due 
+      
+    
+    </summary>
+    
+    
+      <category term="Life" scheme="http://blog.david916.com/categories/Life/"/>
+    
+    
+      <category term="Introduction" scheme="http://blog.david916.com/tags/Introduction/"/>
+    
+      <category term="随笔" scheme="http://blog.david916.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Blog搭建记录</title>
@@ -43,34 +99,6 @@
       <category term="Jekyll" scheme="http://blog.david916.com/tags/Jekyll/"/>
     
       <category term="Github" scheme="http://blog.david916.com/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://blog.david916.com/2019/09/19/hello-world/"/>
-    <id>http://blog.david916.com/2019/09/19/hello-world/</id>
-    <published>2019-09-19T08:29:34.722Z</published>
-    <updated>2019-09-20T12:38:01.494Z</updated>
-    
-    <content type="html"><![CDATA[<p>I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern Arizona University as an exchange student and came back to China on August, 2019. So before I finish my last course and graduate from Jinan University on January 2020, I actually got a couple of months free time, although “free time” is not very accurate because I still need to finish my research project and hopefully I can submit a paper in mid October. I am also applying for grad schools, so I also need to prepare the paperwork and GRE, which I didn’t receive a very good score in my first exam. Meanwhile, I am trying to find a job or internship, so I am also working on Leetcode.</p><p>In this blog, I plan to record and share somethings I’ve learned or I am working on. I see this blog as a conclusion of what I have learned during my four years college life, and a starting point of my career path. I am not sure if anyone will actually notice I have started this blog. If you are reading this, you are very welcome to comment in the comment box below. Currently this blog didn’t have too many content. I will try my best to learn new things and share, so one day maybe if you find something useful in here.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due 
-      
-    
-    </summary>
-    
-    
-      <category term="Life" scheme="http://blog.david916.com/categories/Life/"/>
-    
-    
-      <category term="Introduction" scheme="http://blog.david916.com/tags/Introduction/"/>
-    
-      <category term="随笔" scheme="http://blog.david916.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
