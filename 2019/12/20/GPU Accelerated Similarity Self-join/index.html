@@ -14,25 +14,25 @@
     
     
     
-    <title>Hello World | David&#39;s Blog | 我怕是个假程序员</title>
+    <title>GPU Accelerated Similarity Self-join | David&#39;s Blog | 我怕是个假程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Introduction,随笔">
-    <meta name="description" content="I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern">
-<meta name="keywords" content="Introduction,随笔">
+    <meta name="keywords" content="GPU,Self-join,Parallel Computing">
+    <meta name="description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold, $\epsilon$, of each other. A typical method for the self-join in low dimensional d">
+<meta name="keywords" content="GPU,Self-join,Parallel Computing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://blog.david916.com/2019/09/19/hello-world/index.html">
+<meta property="og:title" content="GPU Accelerated Similarity Self-join">
+<meta property="og:url" content="http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/index.html">
 <meta property="og:site_name" content="David&#39;s Blog">
-<meta property="og:description" content="I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern">
+<meta property="og:description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold, $\epsilon$, of each other. A typical method for the self-join in low dimensional d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-20T12:38:34.000Z">
+<meta property="og:updated_time" content="2019-12-20T12:00:22.860Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern">
+<meta name="twitter:title" content="GPU Accelerated Similarity Self-join">
+<meta name="twitter:description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold, $\epsilon$, of each other. A typical method for the self-join in low dimensional d">
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
     
@@ -120,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hello World</div>
+        <div class="flex-col header-title ellipsis">GPU Accelerated Similarity Self-join</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,15 +142,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">GPU Accelerated Similarity Self-join</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-09-19T08:29:34.000Z" itemprop="datePublished" class="page-time">
-  2019-09-19
+                <time datetime="2019-12-20T11:49:08.321Z" itemprop="datePublished" class="page-time">
+  2019-12-20
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Life/">Life</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a></li></ul>
 
             
         </h5>
@@ -164,17 +164,24 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number">1.</span> <span class="post-toc-text">Introduction</span></a></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-hello-world"
+
+<article id="post-GPU Accelerated Similarity Self-join"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Hello World</h1>
+        <h1 class="post-card-title">GPU Accelerated Similarity Self-join</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-09-19 16:29:34" datetime="2019-09-19T08:29:34.000Z"  itemprop="datePublished">2019-09-19</time>
+            <time class="post-time" title="2019-12-20 19:49:08" datetime="2019-12-20T11:49:08.321Z"  itemprop="datePublished">2019-12-20</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Life/">Life</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a></li></ul>
 
 
 
@@ -186,8 +193,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern Arizona University as an exchange student and came back to China on August, 2019. So before I finish my last course and graduate from Jinan University on January 2020, I actually got a couple of months free time, although “free time” is not very accurate because I still need to finish my research project and hopefully I can submit a paper in mid October. I am also applying for grad schools, so I also need to prepare the paperwork and GRE, which I didn’t receive a very good score in my first exam. Meanwhile, I am trying to find a job or internship, so I am also working on Leetcode.</p>
-<p>In this blog, I plan to record and share somethings I’ve learned or I am working on. I see this blog as a conclusion of what I have learned during my four years college life, and a starting point of my career path. I am not sure if anyone will actually notice I have started this blog. If you are reading this, you are very welcome to comment in the comment box below. Currently this blog didn’t have too many content. I will try my best to learn new things and share, so one day maybe if you find something useful in here.</p>
+            <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The similarity self-join is an operation that finds all objects in a dataset within a distance threshold, $\epsilon$, of each other. A typical method for the self-join in low dimensional data is to utilize the search-and-refine strategy: search a set of candidate points that may be within the search radius for every query point, and then refine them by performing the distance calculations. Numerous searches for points within the search distance take advantage of the GPU’s high memory bandwidth and massive parallelism. Thus, the GPU’s architecture is suitable for massively parallel range queries and join operations.</p>
 
         </div>
 
@@ -196,12 +202,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-20T12:38:34.000Z" itemprop="dateUpdated">2019-09-20 20:38:34</time>
+    Last updated: <time datetime="2019-12-20T12:00:22.860Z" itemprop="dateUpdated">2019-12-20 20:00:22</time>
 </span><br>
 
 
         
-        本文链接：<a href="/2019/09/19/hello-world/" target="_blank" rel="external">http://blog.david916.com/2019/09/19/hello-world/</a>
+        本文链接：<a href="/2019/12/20/GPU Accelerated Similarity Self-join/" target="_blank" rel="external">http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/</a>
         
     </div>
     
@@ -218,7 +224,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Introduction/">Introduction</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GPU/">GPU</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Parallel-Computing/">Parallel Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Self-join/">Self-join</a></li></ul>
 
 
             
@@ -228,7 +234,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2019/09/19/hello-world/&title=《Hello World》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -238,22 +244,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2019/09/19/hello-world/&title=《Hello World》 — David's Blog&source=Developer. Student major in Computer Science." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&source=Developer. Student major in Computer Science." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2019/09/19/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — David's Blog&url=http://blog.david916.com/2019/09/19/hello-world/&via=http://blog.david916.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《GPU Accelerated Similarity Self-join》 — David's Blog&url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&via=http://blog.david916.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2019/09/19/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -273,21 +279,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/09/20/利用R语言随机森林对美国计算机硕士录取结果进行预测/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">利用R语言随机森林对美国计算机硕士录取结果进行预测</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/09/19/Blog搭建记录/" id="post-next" class="post-nav-link">
+      <a href="/2019/09/29/php环境搭建/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Blog搭建记录</h4>
+        <h4 class="title">Cent OS 安装Nginx+PHP+FTP环境</h4>
       </a>
     </div>
   
@@ -387,7 +386,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2019/09/19/hello-world/&title=《Hello World》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -397,22 +396,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2019/09/19/hello-world/&title=《Hello World》 — David's Blog&source=Developer. Student major in Computer Science." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&source=Developer. Student major in Computer Science." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2019/09/19/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — David's Blog&url=http://blog.david916.com/2019/09/19/hello-world/&via=http://blog.david916.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《GPU Accelerated Similarity Self-join》 — David's Blog&url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&via=http://blog.david916.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2019/09/19/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -423,7 +422,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQW7DMAwEwPz/0+41QGtnSSpALY9ORavAnhy2FKnXK17H23r/zfXOsz2/9589ZfHCwMC4LeO4XPmeyVPOvqDCczEwMB7ASKIwf938UznpwztjYGBgXIZgvj8pCjEwMDBWBW61sEsOwxgYGBjXjEmJ1isc89Jw8VkcAwPjhozJ0fTbP39lvoGBgXErxlFc+YCzF5dHa2FgYOzN6LXvJw2yHFN9HwwMjL0ZebP++iUSZB7QvUMyBgbG3ow8OpMwTXirxqgYGBhPYORN+aS5n/PyiH9NvksMDIybMybXIKpfRA4b3RbBwMDYlFEN096ktFc4RmwMDIzHMHJMPs7M47s3QD2dxGJgYGzEWBWU1QJxHrgLBgYYGBg3ZOQXJnoPSIrC/BBbuGaBgYFxc0ZeflWvalVDNgf/8RsMDIytGb2LDvOAnjTjPsQuBgbGpoz8A/MRQt6Ga445MTAwtmP0Gu7Xj+m14fJBafM/BgYGxm0ZeQgm+3ukyWgTAwMDI2murQro3qWK094hBgbGAxjzwq4al/meaJCJgYGxKaM6nqyGZjWmyyNSDAyMTRlHcSXxN4/XagMOAwNjb0Yv7KpXJfJGXjJMrV5Ww8DA2IORBGUyKqiGeLUMxcDAwKgeOKtH30LjrHecxsDAwIiDr1c+9grH8pwTAwPjwYy8ibaK+pXAxcDA+PeMarO+99fqcLRQdGJgYGzNyD82b/pPAAuGmhgYGPdj/ADWgbJQrAdKogAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aQU4kMQwFUO5/aUaa1UhMd/1vJ8Di1arUQMhLSWW37Y+P+Pr8e/17//X6+vtfP3/102T9V6sduPDw8PBGW3+/3Kv7V0eQHFP7+fAI8PDw8K7x8qWTf5wEgPzgVkeMh4eH96O8V9tt09/3yDztxsPDw/v9vLYYkX+yucfDw8P7KV5SjGjT34Q0S8ev1Frw8PDwLnSRfs/99f4eHh4e3qirPisx5K/v92Fgv1s8PDy8G7x86VmoaNtjs2T9Yed4eHh4R3lta382NJAMciXgvHD8n7iHh4eHd4i3eX8mn282Omu5PVSp8fDw8Na8zbhVGzby1fIiSPRdAQ8PD+8ob7Noni7Phrraw11NRuDh4eEteO8XnTFmJdp9UMHDw8O7wWtbUy0pXz85uLZFh4eHh3ePtykN5OlvEiT2aToeHh7e9/DyJlNemGgnoNpCQzSOgIeHh3eBN0Nuhqs2SXzefls9Qzw8PLy3vP1yZ/PYtuX2EGDw8PDwLvDqGBInypurbcJFu8XDw8M7ysv/uH1N54WDfTn4YTICDw8P7xCvbeG3Zdk2jW6DxMPjwcPDw7vAm2WebVF1M6yQHHH9jQEPDw9vzctf7m3LKh/hassZBRIPDw/vGq9No1tw22bbhxk8PDy87+HtX9CbltWmHPxQpcbDw8M7ytu/RfOUuh1BaIsRRSzCw8PDW/DaQYF90bYNMPVTwsPDw/sWXovcbGs2WDB8YHh4eHhHeZ/ltS+2ttQ8RP1nfTw8PLwLvFkkmRVqZ/9+VuT92ARKPDw8vICXD0LtSwZtGJg12B76e3h4eHiHeO1LeVOemJV3Z9VaPDw8vN/DOzuz0IKLgISHh4f3o7z9qzwfxsrLxw97wMPDw7vG2yS7SXo9AxweusLDw8M7xNs0wJLCa9vgz1P52bHi4eHhLXh/AMPT0HWYP5aYAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
