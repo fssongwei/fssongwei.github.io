@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg">
-<meta property="og:updated_time" content="2019-12-20T13:05:24.133Z">
+<meta property="og:updated_time" content="2019-12-20T13:08:24.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GPU Accelerated Similarity Self-join">
 <meta name="twitter:description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refi">
@@ -201,20 +201,20 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png" alt="grid.png" title>
+                    <img src="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png" alt="Figure 1" title>
                 </div>
-                <div class="image-caption">grid.png</div>
-            </figure>
+                <div class="image-caption">Figure 1</div>
+            </figure>{:width="60%"}
 
 <p>(Figure 1: An example of grid indexing structure in 2D. We want to find all the points that are within ε with point p (the point in the circle area). In order to do that, we use the grid index structure so every point are within a grid cell. Then we  search all the points in the cells adjacents to the cell that contains p (nine cells in the large square bounded by the dash line) to limit the search area. After we find all the points, we verify each point by performing distance calculations (in here we use Euclidean metric), to see if the point are within the circle)</p>
 <p>Our goal is to minimize the divergence of workload among each threads. To achieve that, we utilize the grid structure, improve it and develop another two grid-base indexing methods. We also extract the feature of datasets to determin which grid indexes we should use, in order to maximize the performance. We have run experiments on differents datasets, synthetic or real-world, and our method generally has better performance, with up to 20x speedup compare to a CPU implementation and up to 5.5x speedup compare to another state-of-art GPU implementation (See Figure 2).</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg" alt="speedup.jpg" title>
+                    <img src="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg" alt="Figure 2" title>
                 </div>
-                <div class="image-caption">speedup.jpg</div>
-            </figure>
+                <div class="image-caption">Figure 2</div>
+            </figure>{:width="60%"}
 
 <p>(Figure 2: (a) compared with another CPU self-join implementation call SuperEgo and (b) compare to another GPU self-join implementation call GPUCalcGlobal. Datasets are from 2D to 8D. The red lines show the average speedup 6.0x and 2.0x, and the black dash line shows where our approach achieves a speedup (or slowdown)).</p>
 <p>We are currently improving our optimization methods and drafting the related outcomes. To be continued …</p>
@@ -226,7 +226,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-20T13:05:24.133Z" itemprop="dateUpdated">2019-12-20 21:05:24</time>
+    Last updated: <time datetime="2019-12-20T13:08:24.870Z" itemprop="dateUpdated">2019-12-20 21:08:24</time>
 </span><br>
 
 
