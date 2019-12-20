@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2019-12-20T12:05:29.376Z</updated>
+  <updated>2019-12-20T12:58:42.254Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/"/>
     <id>http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/</id>
     <published>2019-12-20T11:49:08.321Z</published>
-    <updated>2019-12-20T12:05:29.376Z</updated>
+    <updated>2019-12-20T12:58:42.254Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The similarity self-join is an operation that finds all objects in a dataset within a distance threshold, $\epsilon$, of each other. A typical method for the self-join in low dimensional data is to utilize the search-and-refine strategy: search a set of candidate points that may be within the search radius for every query point, and then refine them by performing the distance calculations. Numerous searches for points within the search distance take advantage of the GPU’s high memory bandwidth and massive parallelism. Thus, the GPU’s architecture is suitable for massively parallel range queries and join operations.</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refine strategy: search a set of candidate points that may be within the search radius for every query point, and then refine them by performing the distance calculations. Numerous searches for points within the search distance take advantage of the GPU’s high memory bandwidth and massive parallelism. Thus, the GPU’s architecture is suitable for massively parallel range queries and join operations.</p><h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><p>There are many ways for points indexing, divided into two categories: Tree-based indexes (such as R-trees, quad-trees and kd-trees), and non-hierarchical indexes (such as Grids, see Figure 1). Due to the GPU’s SIMT architecture, tree indexes cause divergence in workload among the groups of threads in GPU call warp, so the total performance is depend on the threads in a warp that needs the longest time. On the other hands, each thread performs similar execution pathways in Grid structure. However, we may still have various number of points in different cells in a grid, which is also not very efficient in SIMT architecture.</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="img/grid.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>(Figure 1: An example of grid indexing structure in 2D. We want to find all the points that are within ε with point p (the point in the circle area). In order to do that, we use the grid index structure so every point are within a grid cell. Then we  search all the points in the cells adjacents to the cell that contains p (nine cells in the large square bounded by the dash line) to limit the search area. After we find all the points, we verify each point by performing distance calculations (in here we use Euclidean metric), to see if the point are within the circle)</p><p>Our goal is to minimize the divergence of workload among each threads. To achieve that, we utilize the grid structure, improve it and develop another two grid-base indexing methods. We also extract the feature of datasets to determin which grid indexes we should use, in order to maximize the performance. We have run experiments on differents datasets, synthetic or real-world, and our method generally has better performance, with up to 20x speedup compare to a CPU implementation and up to 5.5x speedup compare to another state-of-art GPU implementation (See Figure 2).</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="img/speedup.jpeg" alt title>                </div>                <div class="image-caption"></div>            </figure><p>(Figure 2: (a) compared with another CPU self-join implementation call SuperEgo and (b) compare to another GPU self-join implementation call GPUCalcGlobal. Datasets are from 2D to 8D. The red lines show the average speedup 6.0x and 2.0x, and the black dash line shows where our approach achieves a speedup (or slowdown)).</p><p>We are currently improving our optimization methods and drafting the related outcomes. To be continued …</p>]]></content>
     
     <summary type="html">
     
@@ -76,6 +76,34 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="http://blog.david916.com/2019/09/19/hello-world/"/>
+    <id>http://blog.david916.com/2019/09/19/hello-world/</id>
+    <published>2019-09-19T08:29:34.000Z</published>
+    <updated>2019-09-20T12:38:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern Arizona University as an exchange student and came back to China on August, 2019. So before I finish my last course and graduate from Jinan University on January 2020, I actually got a couple of months free time, although “free time” is not very accurate because I still need to finish my research project and hopefully I can submit a paper in mid October. I am also applying for grad schools, so I also need to prepare the paperwork and GRE, which I didn’t receive a very good score in my first exam. Meanwhile, I am trying to find a job or internship, so I am also working on Leetcode.</p><p>In this blog, I plan to record and share somethings I’ve learned or I am working on. I see this blog as a conclusion of what I have learned during my four years college life, and a starting point of my career path. I am not sure if anyone will actually notice I have started this blog. If you are reading this, you are very welcome to comment in the comment box below. Currently this blog didn’t have too many content. I will try my best to learn new things and share, so one day maybe if you find something useful in here.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due 
+      
+    
+    </summary>
+    
+    
+      <category term="Life" scheme="http://blog.david916.com/categories/Life/"/>
+    
+    
+      <category term="Introduction" scheme="http://blog.david916.com/tags/Introduction/"/>
+    
+      <category term="随笔" scheme="http://blog.david916.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Blog搭建记录</title>
     <link href="http://blog.david916.com/2019/09/19/Blog%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     <id>http://blog.david916.com/2019/09/19/Blog搭建记录/</id>
@@ -102,34 +130,6 @@
       <category term="Jekyll" scheme="http://blog.david916.com/tags/Jekyll/"/>
     
       <category term="Github" scheme="http://blog.david916.com/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://blog.david916.com/2019/09/19/hello-world/"/>
-    <id>http://blog.david916.com/2019/09/19/hello-world/</id>
-    <published>2019-09-19T08:29:34.000Z</published>
-    <updated>2019-09-20T12:38:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due to my busy courses schedule. Recently I guaduated from Northern Arizona University as an exchange student and came back to China on August, 2019. So before I finish my last course and graduate from Jinan University on January 2020, I actually got a couple of months free time, although “free time” is not very accurate because I still need to finish my research project and hopefully I can submit a paper in mid October. I am also applying for grad schools, so I also need to prepare the paperwork and GRE, which I didn’t receive a very good score in my first exam. Meanwhile, I am trying to find a job or internship, so I am also working on Leetcode.</p><p>In this blog, I plan to record and share somethings I’ve learned or I am working on. I see this blog as a conclusion of what I have learned during my four years college life, and a starting point of my career path. I am not sure if anyone will actually notice I have started this blog. If you are reading this, you are very welcome to comment in the comment box below. Currently this blog didn’t have too many content. I will try my best to learn new things and share, so one day maybe if you find something useful in here.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;I planned to start this blog several years ago. I actually built a blog with Jekyll two years ago, which didn’t last for a long time due 
-      
-    
-    </summary>
-    
-    
-      <category term="Life" scheme="http://blog.david916.com/categories/Life/"/>
-    
-    
-      <category term="Introduction" scheme="http://blog.david916.com/tags/Introduction/"/>
-    
-      <category term="随笔" scheme="http://blog.david916.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
