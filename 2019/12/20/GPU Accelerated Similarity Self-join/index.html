@@ -29,13 +29,13 @@
 <meta property="og:site_name" content="David&#39;s Blog">
 <meta property="og:description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refi">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/img/grid.png">
-<meta property="og:image" content="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/img/speedup.jpeg">
-<meta property="og:updated_time" content="2019-12-20T12:58:42.254Z">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg">
+<meta property="og:updated_time" content="2019-12-20T13:05:24.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GPU Accelerated Similarity Self-join">
 <meta name="twitter:description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refi">
-<meta name="twitter:image" content="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/img/grid.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png">
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
     
@@ -201,9 +201,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="img/grid.png" alt title>
+                    <img src="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png" alt="grid.png" title>
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">grid.png</div>
             </figure>
 
 <p>(Figure 1: An example of grid indexing structure in 2D. We want to find all the points that are within ε with point p (the point in the circle area). In order to do that, we use the grid index structure so every point are within a grid cell. Then we  search all the points in the cells adjacents to the cell that contains p (nine cells in the large square bounded by the dash line) to limit the search area. After we find all the points, we verify each point by performing distance calculations (in here we use Euclidean metric), to see if the point are within the circle)</p>
@@ -211,9 +211,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="img/speedup.jpeg" alt title>
+                    <img src="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg" alt="speedup.jpg" title>
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">speedup.jpg</div>
             </figure>
 
 <p>(Figure 2: (a) compared with another CPU self-join implementation call SuperEgo and (b) compare to another GPU self-join implementation call GPUCalcGlobal. Datasets are from 2D to 8D. The red lines show the average speedup 6.0x and 2.0x, and the black dash line shows where our approach achieves a speedup (or slowdown)).</p>
@@ -226,7 +226,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-20T12:58:42.254Z" itemprop="dateUpdated">2019-12-20 20:58:42</time>
+    Last updated: <time datetime="2019-12-20T13:05:24.133Z" itemprop="dateUpdated">2019-12-20 21:05:24</time>
 </span><br>
 
 
