@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-07-16T18:13:57.392Z</updated>
+  <updated>2020-07-19T09:40:12.565Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Yelp Camp - A full-stack Node.js Web Application Project</title>
+    <link href="http://blog.david916.com/2020/07/19/Yelp%20Camp%20-%20A%20full-stack%20Node.js%20Web%20Application%20Project/"/>
+    <id>http://blog.david916.com/2020/07/19/Yelp Camp - A full-stack Node.js Web Application Project/</id>
+    <published>2020-07-19T09:35:53.138Z</published>
+    <updated>2020-07-19T09:40:12.565Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Yelp Camp is a Yelp-like node.js web app. It’s the final course project of the Web Develop Bootcamp course in Udemy. Users and campground owners can upload their campground information to the website, and other users can leave a comment to the campground.</p><p><a href="http://app.david916.com:2000" target="_blank" rel="noopener">Live Demo</a><br><a href="https://github.com/fssongwei/YelpCamp" target="_blank" rel="noopener">Source Code</a></p><p>The app is built on Node.js with Express. Other technologies and library using in this project are listing below: </p><p><strong>UI Library</strong>: Bootstrap</p><p><strong>Database</strong>: MongoDB, Mongoose</p><p><strong>Authentication</strong>: passport.js, bcrypt, express-session, express-flash</p><h3 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h3><h5 id="2020-7-19-Version-1-0"><a href="#2020-7-19-Version-1-0" class="headerlink" title="2020.7.19 Version 1.0"></a>2020.7.19 Version 1.0</h5><ol><li>Front-end development with HTML/CSS/JS and Bootstrap 4</li><li>Back-end development with Node.js and Express</li><li>Built user login and register system with Passport.js</li><li>Developed Posts module and Comments module</li></ol><h5 id="To-do-List"><a href="#To-do-List" class="headerlink" title="To-do List"></a>To-do List</h5><p>Other features comming. If you have any idea, send email to <a href="mailto:ws446@cornell.edu" target="_blank" rel="noopener">ws446@cornell.edu</a></p><ol><li>Fuzzy Search </li><li>Campground location with Google Maps</li><li>User profile </li><li>Password reset </li><li>Image upload with multer and cloudinary </li><li>Payment with Stripe API</li><li>Ratings</li><li>Pagination in campgrounds index</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;Yelp Camp is a Yelp-like node.
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
+      <category term="Bootstrap" scheme="http://blog.david916.com/tags/Bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Dwitter - A Twitter-like Social Media App</title>
-    <link href="http://blog.david916.com/2019/12/20/Dwitter%20-%20A%20Twitter-like%20Social%20Media%20App/"/>
-    <id>http://blog.david916.com/2019/12/20/Dwitter - A Twitter-like Social Media App/</id>
-    <published>2019-12-20T11:49:08.321Z</published>
-    <updated>2020-07-16T18:13:57.392Z</updated>
+    <link href="http://blog.david916.com/2020/07/17/Dwitter%20-%20A%20Twitter-like%20Social%20Media%20App/"/>
+    <id>http://blog.david916.com/2020/07/17/Dwitter - A Twitter-like Social Media App/</id>
+    <published>2020-07-16T23:17:00.000Z</published>
+    <updated>2020-07-16T16:00:00.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Dwitter is a Twitter-like social media web app written in Javascript. The name “Dwitter” stands for “David’s Twitter”. Users can post their thoughs, follow other user, comment and like other user’s posts.</p><p>The app is built on Node.js with Express. Other technologies and library using in this project are listing below: </p><p>#####UI Library</p><p>MDUI</p><h5 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h5><p>MongoDB</p><p>Mongoose</p><h5 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h5><p>passport.js</p><p>bcrypt</p><p>express-session</p><p>express-flash</p><h5 id="Live-Demo"><a href="#Live-Demo" class="headerlink" title="Live Demo"></a><a href="http://app.david916.com:1000" target="_blank" rel="noopener">Live Demo</a></h5><h5 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a><a href="https://github.com" target="_blank" rel="noopener">Source Code</a></h5><h3 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h3><h5 id="2020-7-16-Version-1-0"><a href="#2020-7-16-Version-1-0" class="headerlink" title="2020.7.16 Version 1.0"></a>2020.7.16 Version 1.0</h5><p>(The app is officially for public testing)</p><ol><li>Improve UI with MDUI (Material Design UI)</li><li>Add following &amp; unfollowing features</li><li>Add like &amp; unlike features</li><li>Implement express-flash to show flash message</li></ol><h5 id="2020-7-15"><a href="#2020-7-15" class="headerlink" title="2020.7.15"></a>2020.7.15</h5><ol><li>Authentication with passport.js</li><li>Refactor the code</li></ol><h5 id="2020-7-14"><a href="#2020-7-14" class="headerlink" title="2020.7.14"></a>2020.7.14</h5><ol><li>Initialize the project by setting up the routers and database models</li><li>Add Basic UI with HTML &amp; CSS</li><li>Add posts &amp; comments create and delete features</li></ol><h5 id="To-do-List"><a href="#To-do-List" class="headerlink" title="To-do List"></a>To-do List</h5><ol><li>Implement photo library for user to upload their photos</li><li>Display the number of favorite for each post</li><li>Implement google / facebook login</li><li>User can change their own avatars</li><li>Other features comming. If you have any idea, send email to <a href="mailto:ws446@cornell.edu" target="_blank" rel="noopener">ws446@cornell.edu</a></li></ol>]]></content>
     
@@ -51,7 +81,7 @@
     <link href="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/"/>
     <id>http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/</id>
     <published>2019-12-20T11:49:08.321Z</published>
-    <updated>2020-07-16T15:22:27.923Z</updated>
+    <updated>2020-07-19T09:43:07.507Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refine strategy: search a set of candidate points that may be within the search radius for every query point, and then refine them by performing the distance calculations. Numerous searches for points within the search distance take advantage of the GPU’s high memory bandwidth and massive parallelism. Thus, the GPU’s architecture is suitable for massively parallel range queries and join operations.</p><h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><p>There are many ways for points indexing, divided into two categories: Tree-based indexes (such as R-trees, quad-trees and kd-trees), and non-hierarchical indexes (such as Grids, see Figure 1). Due to the GPU’s SIMT architecture, tree indexes cause divergence in workload among the groups of threads in GPU call warp, so the total performance is depend on the threads in a warp that needs the longest time. On the other hands, each thread performs similar execution pathways in Grid structure. However, we may still have various number of points in different cells in a grid, which is also not very efficient in SIMT architecture.</p><div style="width: 50%; margin: auto"><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png" alt="Figure 1" title>                </div>                <div class="image-caption">Figure 1</div>            </figure></div>(Figure 1: An example of grid indexing structure in 2D. We want to find all the points that are within ε with point p (the point in the circle area). In order to do that, we use the grid index structure so every point are within a grid cell. Then we  search all the points in the cells adjacents to the cell that contains p (nine cells in the large square bounded by the dash line) to limit the search area. After we find all the points, we verify each point by performing distance calculations (in here we use Euclidean metric), to see if the point are within the circle)<p>Our goal is to minimize the divergence of workload among each threads. To achieve that, we utilize the grid structure, improve it and develop another two grid-base indexing methods. We also extract the feature of datasets to determin which grid indexes we should use, in order to maximize the performance. We have run experiments on differents datasets, synthetic or real-world, and our method generally has better performance, with up to 20x speedup compare to a CPU implementation and up to 5.5x speedup compare to another state-of-art GPU implementation (See Figure 2).</p><div style="width: 50%; margin: auto"><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg" alt="Figure 2" title>                </div>                <div class="image-caption">Figure 2</div>            </figure></div>(Figure 2: (a) compared with another CPU self-join implementation call SuperEgo and (b) compare to another GPU self-join implementation call GPUCalcGlobal. Datasets are from 2D to 8D. The red lines show the average speedup 6.0x and 2.0x, and the black dash line shows where our approach achieves a speedup (or slowdown)).<p>We are currently improving our optimization methods and drafting the related outcomes. To be continued …</p>]]></content>
     
@@ -65,7 +95,7 @@
     </summary>
     
     
-      <category term="Tech" scheme="http://blog.david916.com/categories/Tech/"/>
+      <category term="Project" scheme="http://blog.david916.com/categories/Project/"/>
     
     
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
