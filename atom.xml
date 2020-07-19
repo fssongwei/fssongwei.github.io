@@ -77,6 +77,37 @@
   </entry>
   
   <entry>
+    <title>Web Develop Bootcamp Front-end Projects</title>
+    <link href="http://blog.david916.com/2020/06/22/Web%20Develop%20Bootcamp%20Front-end%20Projects/"/>
+    <id>http://blog.david916.com/2020/06/22/Web Develop Bootcamp Front-end Projects/</id>
+    <published>2020-06-21T22:22:00.000Z</published>
+    <updated>2020-07-19T12:13:44.636Z</updated>
+    
+    <content type="html"><![CDATA[<p>Below are some of the web developer bootcamp course projects. All of them are purely front-end app with only HTML / CSS / Javascript</p><p><a href="https://github.com/fssongwei/WDB-Projects" target="_blank" rel="noopener">Source Code</a></p><h4 id="Color-Guessing-Game"><a href="#Color-Guessing-Game" class="headerlink" title="Color Guessing Game"></a>Color Guessing Game</h4><p>The game will give an RGB value and some squares fill with different color. The player choose the correct color square that matches the given RGB value wins. There are three difficulty level to choose. The game also includes a statistics function to calculate the correct rate of the player.</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/19/V7fmPHsA4kO8MZo.png" alt="colorGame.png" title>                </div>                <div class="image-caption">colorGame.png</div>            </figure><p><a href="https://www.david916.com/projects/patatap/index.html" target="_blank" rel="noopener">Demo</a></p><h4 id="To-Do-List"><a href="#To-Do-List" class="headerlink" title="To-Do List"></a>To-Do List</h4><p>This tool allows user to keep track of their daily tasks. User can update a task, mark it as completed, or delete a task.</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/19/nQARgB2shIMb1q7.png" alt="TodoList.png" title>                </div>                <div class="image-caption">TodoList.png</div>            </figure><p><a href="https://www.david916.com/projects/todolist/" target="_blank" rel="noopener">Demo</a></p><h4 id="Patatap"><a href="#Patatap" class="headerlink" title="Patatap"></a>Patatap</h4><p>Patatap is a fun music game. User can type any key on their keyborad and the game will play different sounds and show animated circle on the screen with different colors.</p><p>Several javacript library are included in this project, includes JQuery, Paper.js and Howler.js</p><p><a href="https://www.david916.com/projects/colorgame/" target="_blank" rel="noopener">Demo</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Below are some of the web developer bootcamp course projects. All of them are purely front-end app with only HTML / CSS / Javascript&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
+      <category term="HTML" scheme="http://blog.david916.com/tags/HTML/"/>
+    
+      <category term="CSS" scheme="http://blog.david916.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GPU Accelerated Similarity Self-join</title>
     <link href="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/"/>
     <id>http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/</id>
