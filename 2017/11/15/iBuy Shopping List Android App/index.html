@@ -14,28 +14,31 @@
     
     
     
-    <title>GPU Accelerated Similarity Self-join | David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
+    <title>iBuy - A Shopping List Android App | David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="GPU,Research,Parallel Computing">
-    <meta name="description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refi">
-<meta name="keywords" content="GPU,Research,Parallel Computing">
+    <meta name="keywords" content="Java,Android">
+    <meta name="description" content="IntroductioniBuy is a shopping list Android application. It allows users to list the items they want to buy, marked the price, amount and urgent level of each item, and share your shopping list within">
+<meta name="keywords" content="Java,Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GPU Accelerated Similarity Self-join">
-<meta property="og:url" content="http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/index.html">
+<meta property="og:title" content="iBuy - A Shopping List Android App">
+<meta property="og:url" content="http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/index.html">
 <meta property="og:site_name" content="David&#39;s Blog">
-<meta property="og:description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refi">
+<meta property="og:description" content="IntroductioniBuy is a shopping list Android application. It allows users to list the items they want to buy, marked the price, amount and urgent level of each item, and share your shopping list within">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png">
-<meta property="og:image" content="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg">
-<meta property="og:updated_time" content="2020-07-20T15:10:05.722Z">
+<meta property="og:image" content="https://i.loli.net/2020/07/21/uaYTs1GRyHbc4hE.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/21/GUT2Vc8MprO9Whf.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/21/61MHuNy4v3BwzLW.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/21/HAIklyimXbUREqg.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/21/i52YVR1Nw7B6WQd.png">
+<meta property="og:updated_time" content="2020-07-20T16:07:51.980Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GPU Accelerated Similarity Self-join">
-<meta name="twitter:description" content="IntroductionThe similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refi">
-<meta name="twitter:image" content="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png">
+<meta name="twitter:title" content="iBuy - A Shopping List Android App">
+<meta name="twitter:description" content="IntroductioniBuy is a shopping list Android application. It allows users to list the items they want to buy, marked the price, amount and urgent level of each item, and share your shopping list within">
+<meta name="twitter:image" content="https://i.loli.net/2020/07/21/uaYTs1GRyHbc4hE.png">
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
     
@@ -130,7 +133,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">GPU Accelerated Similarity Self-join</div>
+        <div class="flex-col header-title ellipsis">iBuy - A Shopping List Android App</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -152,11 +155,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">GPU Accelerated Similarity Self-join</h1>
+        <h1 class="title">iBuy - A Shopping List Android App</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-12-20T11:49:08.321Z" itemprop="datePublished" class="page-time">
-  2019-12-20
+                <time datetime="2017-11-15T03:15:00.000Z" itemprop="datePublished" class="page-time">
+  2017-11-15
 </time>
 
 
@@ -177,18 +180,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number">1.</span> <span class="post-toc-text">Introduction</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Optimization"><span class="post-toc-number">2.</span> <span class="post-toc-text">Optimization</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number">1.</span> <span class="post-toc-text">Introduction</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Updates"><span class="post-toc-number">2.</span> <span class="post-toc-text">Updates</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2017-11-15-Version-1-0"><span class="post-toc-number">2.0.0.1.</span> <span class="post-toc-text">2017.11.15 Version 1.0</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">3.</span> <span class="post-toc-text">Demo</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-GPU Accelerated Similarity Self-join"
+<article id="post-iBuy Shopping List Android App"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">GPU Accelerated Similarity Self-join</h1>
+        <h1 class="post-card-title">iBuy - A Shopping List Android App</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-12-20 19:49:08" datetime="2019-12-20T11:49:08.321Z"  itemprop="datePublished">2019-12-20</time>
+            <time class="post-time" title="2017-11-15 11:15:00" datetime="2017-11-15T03:15:00.000Z"  itemprop="datePublished">2017-11-15</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Projects/">Projects</a></li></ul>
@@ -203,29 +206,20 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refine strategy: search a set of candidate points that may be within the search radius for every query point, and then refine them by performing the distance calculations. Numerous searches for points within the search distance take advantage of the GPU’s high memory bandwidth and massive parallelism. Thus, the GPU’s architecture is suitable for massively parallel range queries and join operations.</p>
-<h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><p>There are many ways for points indexing, divided into two categories: Tree-based indexes (such as R-trees, quad-trees and kd-trees), and non-hierarchical indexes (such as Grids, see Figure 1). Due to the GPU’s SIMT architecture, tree indexes cause divergence in workload among the groups of threads in GPU call warp, so the total performance is depend on the threads in a warp that needs the longest time. On the other hands, each thread performs similar execution pathways in Grid structure. However, we may still have various number of points in different cells in a grid, which is also not very efficient in SIMT architecture.</p>
-<div style="width: 50%; margin: auto"><figure class="image-bubble">
+            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>iBuy is a shopping list Android application. It allows users to list the items they want to buy, marked the price, amount and urgent level of each item, and share your shopping list within a group (family, friend, etc). </p>
+<p>A household goes through tons of “consumables”: food, toilet paper, laundry detergent, you name it. It is a huge challenge for households to track and manage these daily needs. Though various household members are moving around the city all day — and could potentially make efficient on-the-way purchases — in reality, no one knows or can remember what needs to be purchased and who is supposed to purchase it. Which means wasted time, extra trips to the store for one item, and general frustration about eating dry cereal, washing your hair with facial soap, and wiping your bottom with paper towels. We’ve all been there. Or worse yet, multiple people remember to buy and you end up with 400 rolls of toilet paper. iBuy will solve this problem forever.</p>
+<p><a href="https://github.com/fssongwei/iBuy" target="_blank" rel="noopener">Source Code</a></p>
+<h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-11-15-Version-1-0"><a href="#2017-11-15-Version-1-0" class="headerlink" title="2017.11.15 Version 1.0"></a>2017.11.15 Version 1.0</h5><ol>
+<li>Final product delievery</li>
+</ol>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><img src="https://i.loli.net/2020/07/21/uaYTs1GRyHbc4hE.png" alt="login.png"> <img src="https://i.loli.net/2020/07/21/GUT2Vc8MprO9Whf.png" alt="Register.png"> <img src="https://i.loli.net/2020/07/21/61MHuNy4v3BwzLW.png" alt="AddItem1.png"> <img src="https://i.loli.net/2020/07/21/HAIklyimXbUREqg.png" alt="AddItem2.png"> </p>
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png" alt="Figure 1" title>
+                    <img src="https://i.loli.net/2020/07/21/i52YVR1Nw7B6WQd.png" alt="ShoppingList.png](https://i.loli.net/2020/07/21/UsiwOx9NzDBnTER.png) ![Account.png](https://i.loli.net/2020/07/21/sXmIvBleu7pyiOc.png) ![Group.png](https://i.loli.net/2020/07/21/xMPl8D3CGLZWKX5.png) ![Copyright.png" title>
                 </div>
-                <div class="image-caption">Figure 1</div>
-            </figure></div>
-(Figure 1: An example of grid indexing structure in 2D. We want to find all the points that are within ε with point p (the point in the circle area). In order to do that, we use the grid index structure so every point are within a grid cell. Then we  search all the points in the cells adjacents to the cell that contains p (nine cells in the large square bounded by the dash line) to limit the search area. After we find all the points, we verify each point by performing distance calculations (in here we use Euclidean metric), to see if the point are within the circle)
-
-<p>Our goal is to minimize the divergence of workload among each threads. To achieve that, we utilize the grid structure, improve it and develop another two grid-base indexing methods. We also extract the feature of datasets to determin which grid indexes we should use, in order to maximize the performance. We have run experiments on differents datasets, synthetic or real-world, and our method generally has better performance, with up to 20x speedup compare to a CPU implementation and up to 5.5x speedup compare to another state-of-art GPU implementation (See Figure 2).</p>
-<div style="width: 50%; margin: auto"><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg" alt="Figure 2" title>
-                </div>
-                <div class="image-caption">Figure 2</div>
-            </figure></div>
-(Figure 2: (a) compared with another CPU self-join implementation call SuperEgo and (b) compare to another GPU self-join implementation call GPUCalcGlobal. Datasets are from 2D to 8D. The red lines show the average speedup 6.0x and 2.0x, and the black dash line shows where our approach achieves a speedup (or slowdown)).
-
-<p>We are currently improving our optimization methods and drafting the related outcomes. To be continued …</p>
-
+                <div class="image-caption">ShoppingList.png](https://i.loli.net/2020/07/21/UsiwOx9NzDBnTER.png) ![Account.png](https://i.loli.net/2020/07/21/sXmIvBleu7pyiOc.png) ![Group.png](https://i.loli.net/2020/07/21/xMPl8D3CGLZWKX5.png) ![Copyright.png</div>
+            </figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -233,12 +227,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-07-20T15:10:05.722Z" itemprop="dateUpdated">2020-07-20 23:10:05</time>
+    Last updated: <time datetime="2020-07-20T16:07:51.980Z" itemprop="dateUpdated">2020-07-21 00:07:51</time>
 </span><br>
 
 
         
-        ref link：<a href="/2019/12/20/GPU Accelerated Similarity Self-join/" target="_blank" rel="external">http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/</a>
+        ref link：<a href="/2017/11/15/iBuy Shopping List Android App/" target="_blank" rel="external">http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/</a>
         
     </div>
     
@@ -255,7 +249,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GPU/">GPU</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Parallel-Computing/">Parallel Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Research/">Research</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 
 
             
@@ -265,7 +259,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/&title=《iBuy - A Shopping List Android App》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -275,22 +269,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/&title=《iBuy - A Shopping List Android App》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《GPU Accelerated Similarity Self-join》 — David's Blog&url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&via=http://blog.david916.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《iBuy - A Shopping List Android App》 — David's Blog&url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/&via=http://blog.david916.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -313,18 +307,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2020/06/22/Web Develop Bootcamp Front-end Projects/" id="post-prev" class="post-nav-link">
+      <a href="/2017/12/06/Android Tetris/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Web Develop Bootcamp Front-end Projects</h4>
+        <h4 class="title">Android Tetris</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/12/06/Android Tetris/" id="post-next" class="post-nav-link">
+      <a href="/2017/10/11/Anagram Game/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android Tetris</h4>
+        <h4 class="title">Anagram Game</h4>
       </a>
     </div>
   
@@ -422,7 +416,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/&title=《iBuy - A Shopping List Android App》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -432,22 +426,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&title=《GPU Accelerated Similarity Self-join》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/&title=《iBuy - A Shopping List Android App》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《GPU Accelerated Similarity Self-join》 — David's Blog&url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/&via=http://blog.david916.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《iBuy - A Shopping List Android App》 — David's Blog&url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/&via=http://blog.david916.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -458,7 +452,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aQU4kMQwFUO5/aUaa1UhMd/1vJ8Di1arUQMhLSWW37Y+P+Pr8e/17//X6+vtfP3/102T9V6sduPDw8PBGW3+/3Kv7V0eQHFP7+fAI8PDw8K7x8qWTf5wEgPzgVkeMh4eH96O8V9tt09/3yDztxsPDw/v9vLYYkX+yucfDw8P7KV5SjGjT34Q0S8ev1Frw8PDwLnSRfs/99f4eHh4e3qirPisx5K/v92Fgv1s8PDy8G7x86VmoaNtjs2T9Yed4eHh4R3lta382NJAMciXgvHD8n7iHh4eHd4i3eX8mn282Omu5PVSp8fDw8Na8zbhVGzby1fIiSPRdAQ8PD+8ob7Noni7Phrraw11NRuDh4eEteO8XnTFmJdp9UMHDw8O7wWtbUy0pXz85uLZFh4eHh3ePtykN5OlvEiT2aToeHh7e9/DyJlNemGgnoNpCQzSOgIeHh3eBN0Nuhqs2SXzefls9Qzw8PLy3vP1yZ/PYtuX2EGDw8PDwLvDqGBInypurbcJFu8XDw8M7ysv/uH1N54WDfTn4YTICDw8P7xCvbeG3Zdk2jW6DxMPjwcPDw7vAm2WebVF1M6yQHHH9jQEPDw9vzctf7m3LKh/hassZBRIPDw/vGq9No1tw22bbhxk8PDy87+HtX9CbltWmHPxQpcbDw8M7ytu/RfOUuh1BaIsRRSzCw8PDW/DaQYF90bYNMPVTwsPDw/sWXovcbGs2WDB8YHh4eHhHeZ/ltS+2ttQ8RP1nfTw8PLwLvFkkmRVqZ/9+VuT92ARKPDw8vICXD0LtSwZtGJg12B76e3h4eHiHeO1LeVOemJV3Z9VaPDw8vN/DOzuz0IKLgISHh4f3o7z9qzwfxsrLxw97wMPDw7vG2yS7SXo9AxweusLDw8M7xNs0wJLCa9vgz1P52bHi4eHhLXh/AMPT0HWYP5aYAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3aQU4DMQwF0N7/0iCxQoLpfNtx28XLCgGd8QtSbOw8HvH6+lnJ7/z+zavv/P3p1fOvPnt44eHh4bVCv1pJWEnQeXD5055HgoeHh7fN670mSSHJNuWneh4zHh4e3ifwcnyvBK8W63h4eHifz6uCJx2DXmMCDw8P75W8XoshL6mfB1RtZ6z0WvDw8PBiXq+1+t6vF+d7eHh4eIOpeq+5MNmspFwuRIuHh4e3wJu/oFo0Jw2OPElEaQMPDw9vmVcdNSUpJL/O1duOm2SDh4eHd5RXDfF5Gsi/02vOVj+Fh4eHt8GblLz5sD9HNgHP34iHh4e3wEsaCr0EcKoQ713AwsPDw9vj5QV0tXWbl+D5BpX/PHh4eHhHeXljtHoNq5pg8mK6cPLj4eHhrfHOhpsPt6rNi/JQDQ8PD2+Blxyy1cf1Su0cUE0SeHh4eGd5+THdu1xVvUbQSzA3aQAPDw/vKK83lMrH/73mRXXTozIaDw8P7xCvWs7mI7FJiMl2R+M0PDw8vDXe/OJU77LUPDndxIOHh4e3wMtfPGkTVNsQvbffIPHw8PAWeKfGV70m7ykSHh4e3javlwzySVOvWK+mkMto8fDw8NZ48/ZrnoWSJ+dsPDw8vPfyJsd9TsqL8t7XhT3Dw8PDG/Bydt50mJTFeVPjpp2Bh4eHt8A7O+LqpY3qJYZqasHDw8M7yytMxqqNgKBAn1z8iloVeHh4eC/kJYd+77ivbmj1ssI/GQ8PDw/vKC9fvcFVr7kwat32Fh4eHl6RNxn550Vz3vKoXly4SQx4eHh4a7y8nK2evXkok+bIzf8NeHh4eG/iVUvbPMFMhmQ3z8fDw8P7AF41hcxHa6MhHB4eHt4aLy+Fe+3XfJCWfypqFuPh4eEt8KoDsFOHfu/awWNj4eHh4aXrG1kU2k+QODKMAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

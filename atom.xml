@@ -112,7 +112,7 @@
     <link href="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/"/>
     <id>http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/</id>
     <published>2019-12-20T11:49:08.321Z</published>
-    <updated>2020-07-19T12:16:28.032Z</updated>
+    <updated>2020-07-20T15:10:05.722Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refine strategy: search a set of candidate points that may be within the search radius for every query point, and then refine them by performing the distance calculations. Numerous searches for points within the search distance take advantage of the GPU’s high memory bandwidth and massive parallelism. Thus, the GPU’s architecture is suitable for massively parallel range queries and join operations.</p><h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><p>There are many ways for points indexing, divided into two categories: Tree-based indexes (such as R-trees, quad-trees and kd-trees), and non-hierarchical indexes (such as Grids, see Figure 1). Due to the GPU’s SIMT architecture, tree indexes cause divergence in workload among the groups of threads in GPU call warp, so the total performance is depend on the threads in a warp that needs the longest time. On the other hands, each thread performs similar execution pathways in Grid structure. However, we may still have various number of points in different cells in a grid, which is also not very efficient in SIMT architecture.</p><div style="width: 50%; margin: auto"><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png" alt="Figure 1" title>                </div>                <div class="image-caption">Figure 1</div>            </figure></div>(Figure 1: An example of grid indexing structure in 2D. We want to find all the points that are within ε with point p (the point in the circle area). In order to do that, we use the grid index structure so every point are within a grid cell. Then we  search all the points in the cells adjacents to the cell that contains p (nine cells in the large square bounded by the dash line) to limit the search area. After we find all the points, we verify each point by performing distance calculations (in here we use Euclidean metric), to see if the point are within the circle)<p>Our goal is to minimize the divergence of workload among each threads. To achieve that, we utilize the grid structure, improve it and develop another two grid-base indexing methods. We also extract the feature of datasets to determin which grid indexes we should use, in order to maximize the performance. We have run experiments on differents datasets, synthetic or real-world, and our method generally has better performance, with up to 20x speedup compare to a CPU implementation and up to 5.5x speedup compare to another state-of-art GPU implementation (See Figure 2).</p><div style="width: 50%; margin: auto"><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg" alt="Figure 2" title>                </div>                <div class="image-caption">Figure 2</div>            </figure></div>(Figure 2: (a) compared with another CPU self-join implementation call SuperEgo and (b) compare to another GPU self-join implementation call GPUCalcGlobal. Datasets are from 2D to 8D. The red lines show the average speedup 6.0x and 2.0x, and the black dash line shows where our approach achieves a speedup (or slowdown)).<p>We are currently improving our optimization methods and drafting the related outcomes. To be continued …</p>]]></content>
     
@@ -131,9 +131,121 @@
     
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
     
-      <category term="Self-join" scheme="http://blog.david916.com/tags/Self-join/"/>
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Tetris</title>
+    <link href="http://blog.david916.com/2017/12/06/Android%20Tetris/"/>
+    <id>http://blog.david916.com/2017/12/06/Android Tetris/</id>
+    <published>2017-12-06T04:06:00.000Z</published>
+    <updated>2020-07-20T15:43:38.467Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is the course project of CS 399 Moblie Application Development. Our final solutions include: </p><ol><li>Tile rotation and speeding</li><li>Tile elimination when rows are filled</li><li>Sound feedback &amp; Background music</li><li>Final score calculation</li><li>Speed up the tile falling speed with different difficulty levels</li><li>Colorful design</li></ol><p><a href="https://github.com/fssongwei/Android-Tetris" target="_blank" rel="noopener">Source Code</a></p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-12-06-Version-1-0"><a href="#2017-12-06-Version-1-0" class="headerlink" title="2017.12.06 Version 1.0"></a>2017.12.06 Version 1.0</h5><ol><li>Final product delievery</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><img src="https://i.loli.net/2020/07/20/QYyaMbAxDWhVnPL.png" alt="main.png" style="zoom: 25%;"> <img src="https://i.loli.net/2020/07/20/nhG14OecDqaxPNY.png" alt="game1.png" style="zoom:25%;"> </p><p><img src="https://i.loli.net/2020/07/20/UGh7pD4XtEA6ClY.png" alt="game2.png" style="zoom:25%;"> <img src="https://i.loli.net/2020/07/20/c8kZ1UMLw3Yd7j5.png" alt="finish.png" style="zoom:25%;"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is the course project of 
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Java" scheme="http://blog.david916.com/tags/Java/"/>
+    
+      <category term="Android" scheme="http://blog.david916.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iBuy - A Shopping List Android App</title>
+    <link href="http://blog.david916.com/2017/11/15/iBuy%20Shopping%20List%20Android%20App/"/>
+    <id>http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/</id>
+    <published>2017-11-15T03:15:00.000Z</published>
+    <updated>2020-07-20T16:07:51.980Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>iBuy is a shopping list Android application. It allows users to list the items they want to buy, marked the price, amount and urgent level of each item, and share your shopping list within a group (family, friend, etc). </p><p>A household goes through tons of “consumables”: food, toilet paper, laundry detergent, you name it. It is a huge challenge for households to track and manage these daily needs. Though various household members are moving around the city all day — and could potentially make efficient on-the-way purchases — in reality, no one knows or can remember what needs to be purchased and who is supposed to purchase it. Which means wasted time, extra trips to the store for one item, and general frustration about eating dry cereal, washing your hair with facial soap, and wiping your bottom with paper towels. We’ve all been there. Or worse yet, multiple people remember to buy and you end up with 400 rolls of toilet paper. iBuy will solve this problem forever.</p><p><a href="https://github.com/fssongwei/iBuy" target="_blank" rel="noopener">Source Code</a></p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-11-15-Version-1-0"><a href="#2017-11-15-Version-1-0" class="headerlink" title="2017.11.15 Version 1.0"></a>2017.11.15 Version 1.0</h5><ol><li>Final product delievery</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><img src="https://i.loli.net/2020/07/21/uaYTs1GRyHbc4hE.png" alt="login.png"> <img src="https://i.loli.net/2020/07/21/GUT2Vc8MprO9Whf.png" alt="Register.png"> <img src="https://i.loli.net/2020/07/21/61MHuNy4v3BwzLW.png" alt="AddItem1.png"> <img src="https://i.loli.net/2020/07/21/HAIklyimXbUREqg.png" alt="AddItem2.png"> </p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/i52YVR1Nw7B6WQd.png" alt="ShoppingList.png](https://i.loli.net/2020/07/21/UsiwOx9NzDBnTER.png) ![Account.png](https://i.loli.net/2020/07/21/sXmIvBleu7pyiOc.png) ![Group.png](https://i.loli.net/2020/07/21/xMPl8D3CGLZWKX5.png) ![Copyright.png" title>                </div>                <div class="image-caption">ShoppingList.png](https://i.loli.net/2020/07/21/UsiwOx9NzDBnTER.png) ![Account.png](https://i.loli.net/2020/07/21/sXmIvBleu7pyiOc.png) ![Group.png](https://i.loli.net/2020/07/21/xMPl8D3CGLZWKX5.png) ![Copyright.png</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;iBuy is a shopping list Androi
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Java" scheme="http://blog.david916.com/tags/Java/"/>
+    
+      <category term="Android" scheme="http://blog.david916.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anagram Game</title>
+    <link href="http://blog.david916.com/2017/10/11/Anagram%20Game/"/>
+    <id>http://blog.david916.com/2017/10/11/Anagram Game/</id>
+    <published>2017-10-11T02:11:00.000Z</published>
+    <updated>2020-07-20T15:29:02.961Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is the course project of CS 399 Moblie Application Development. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For example, the word anagram can be rearranged into nag a ram, or the word binary into brainy or the word adobe into abode.</p><p>This android game has 3 different difficulty levels. The game will provide a word and the player will need to enter the correct anagram in order to continue the game. The length of the word will increase with the difficulty of the game. Once the players finish all questions, the game will show a result page with info like the correct rate.</p><p><a href="https://github.com/fssongwei/Anagram" target="_blank" rel="noopener">Source Code</a></p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-10-10-Version-1-0"><a href="#2017-10-10-Version-1-0" class="headerlink" title="2017.10.10 Version 1.0"></a>2017.10.10 Version 1.0</h5><ol><li>Designed and implemented the UI of the game</li><li>Implemented the game logic and a questions library.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/20/tEbrCWH4cfja8yD.png" alt="main.jpg](https://i.loli.net/2020/07/20/2ve5sNAcRFpBzQ1.jpg) ![game.png](https://i.loli.net/2020/07/20/GlQ71FdLfoxV5D9.png) ![info.png" title>                </div>                <div class="image-caption">main.jpg](https://i.loli.net/2020/07/20/2ve5sNAcRFpBzQ1.jpg) ![game.png](https://i.loli.net/2020/07/20/GlQ71FdLfoxV5D9.png) ![info.png</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is the course project of 
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Java" scheme="http://blog.david916.com/tags/Java/"/>
+    
+      <category term="Android" scheme="http://blog.david916.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Calculator App</title>
+    <link href="http://blog.david916.com/2017/10/10/Android%20Calculator%20App/"/>
+    <id>http://blog.david916.com/2017/10/10/Android Calculator App/</id>
+    <published>2017-10-10T02:10:00.000Z</published>
+    <updated>2020-07-20T15:13:18.768Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is the course project of CS 399 Moblie Application Development. The goal of this project is to develop a calculator android application that provides basic calculation functions like add, subtract, multiply, divide, square root, and percentage. The app has a simple user interface and sounds effect when users click on the button.</p><p>When first we start to design this app, we try to use the GridLayout to implement the UI of this application. But the problem is the GridLayout in Android is kind of a new thing, which only supports the larger size of the screens. While we try to implement this in a smaller size screen, all of the components went outside of the screen and there is no solution on the internet to solve this problem. Finally, after some research, we decide to use the Tablelayout, which is more flexible to different kinds of devices and reduces the complication of the UI code. It is also flexible in both vertical and landscape views. The whole color design is inspired by the calculator design of the iOS original calculator application. </p><p>For the division function, it requires the second parameter not to be 0, otherwise, it will throw an error and play the error sound. Another issue is to keep the calculation continuously while we keep pressing the operator button after we got a result. When we first calculate a result, we will store it into a variable and use it as the first parameter of the next calculation.</p><p>Besides, due to the different sizes of the screens of the devices, we had to limit the digits of the number less than 10. If the digits of the calculation result are greater than 10, we will use the scientific notation to represent the result.</p><p><a href="https://storage.googleapis.com/www.david916.com/projects/SuperCalculator.apk" target="_blank" rel="noopener">APK Download</a><br><a href="https://github.com/fssongwei/Android-Calculator" target="_blank" rel="noopener">Source Code</a></p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-10-10-Version-1-0"><a href="#2017-10-10-Version-1-0" class="headerlink" title="2017.10.10 Version 1.0"></a>2017.10.10 Version 1.0</h5><ol><li>Designed and implemented the user interface of the calculator app</li><li>Developed the calculator function, such as addition, substraction, multiplication and division.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="https://i.loli.net/2020/07/20/gXYnOKSz3DjxBpl.jpg" alt="calculator-Main.jpg" style="zoom: 25%;"><img src="https://i.loli.net/2020/07/20/vpzwisVSjcl4gr1.jpg" alt="calculator-Landscape.jpg" style="zoom:25%;">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is the course project of 
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Java" scheme="http://blog.david916.com/tags/Java/"/>
+    
+      <category term="Android" scheme="http://blog.david916.com/tags/Android/"/>
     
   </entry>
   
