@@ -138,6 +138,36 @@
   </entry>
   
   <entry>
+    <title>Predictions and Countermeasures for the Opioid Crisis with Socio-Economic Factors</title>
+    <link href="http://blog.david916.com/2019/01/29/Predictions%20and%20Countermeasures%20for%20the%20Opioid%20Crisis%20with%20Socio-Economic%20Factors/"/>
+    <id>http://blog.david916.com/2019/01/29/Predictions and Countermeasures for the Opioid Crisis with Socio-Economic Factors/</id>
+    <published>2019-01-28T17:29:00.000Z</published>
+    <updated>2020-07-20T16:45:51.053Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>This project is for the 35th annual Mathematical Contest in Modeling, which won the Honorable Mention amount 16% of the 14,108 participant teams.</p><p><a href="https://github.com/fssongwei/2019-MCM/raw/master/final%20report/report.pdf" target="_blank" rel="noopener">Full Final Report</a><br><a href="https://github.com/fssongwei/2019-MCM" target="_blank" rel="noopener">Source Code</a><br><a href="https://github.com/fssongwei/2019-MCM/raw/master/final%20report/certificate.pdf" target="_blank" rel="noopener">Certificate</a></p><p>In this project, we developed a set of data analyses to determine the opioids source-locations in Ohio, Pennsylvania, Virginia, West Virginia, and Kentucky, to predict the opioids con- sumption trends in years up to 2027, to determine the strongest socio-economic factors that influenced the opioids consumptions trends, and to propose a countermeasure that would possibly ease the Opioid Crisis.</p><p>First, we processed the data from the drug identification counts by eliminating redun- dant data and by filling the missing data. We chose data values under “Percent” for our future models, because they are the most representative in analyzing opioids consump- tion. We filled the missing data by applying the curve fitting and cubic spline methods to data missing between 20%-50% and under 20%, respectively.</p><p>Second, with our processed data, we analyzed the locations of the most probable opioid source by utilizing the Bayesian Networks with distance as the determining factor. Graphs representing the locations of several sources are plotted. We then proceed to predict the trends of the top four opioids consumption amount and percentage with Grey Box model. We give a detailed and concise analysis of the opioids types trend.</p><p>Third, we took account of the impact of major socio-economic factors in opioid con- sumption by increasing efficiency with Principal Component Analysis and by upgrading the previous Grey Box prediction with Vector Autoregression (VAR). VAR allowed us to take account of the socio-economic factors along with the data in opioids consumption in 2010-2017.</p><p>Last, we proposed that disability is a major factor in determining the opioid con- sumption trend. We performed the VAR with a decreasing factor of 1% each year and observed positive result confirming our proposal.</p><p>In conclusion, we suggest funding for institutions with opioids rehabilitation as a countering measure against the opioid crisis. We also discussed about the significant parameters that bounds the success and failures of our models, as well as the strengths and weaknesses of our models.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;p&gt;This project is for the 35th annual Mathematical C
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
+      <category term="R" scheme="http://blog.david916.com/tags/R/"/>
+    
+      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android Tetris</title>
     <link href="http://blog.david916.com/2017/12/06/Android%20Tetris/"/>
     <id>http://blog.david916.com/2017/12/06/Android Tetris/</id>
