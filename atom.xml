@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-07-19T11:27:00.820Z</updated>
+  <updated>2020-07-31T08:56:18.216Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Youtube Shuffle</title>
+    <link href="http://blog.david916.com/2020/07/29/Youtube%20Shuffle/"/>
+    <id>http://blog.david916.com/2020/07/29/Youtube Shuffle/</id>
+    <published>2020-07-29T11:40:22.751Z</published>
+    <updated>2020-07-31T08:56:18.216Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Youtube shuffle is a <strong>React</strong> app using Youtube Data API. It has a personalized user interface which allows users to search a Youtube video and play it. It also includes a shuffle function, which the program will randomly generated a keyword and presents the related videos from Youtube.</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/31/mqlB7crGP5wUXiC.png" alt="Youtube Shuffle.png" title>                </div>                <div class="image-caption">Youtube Shuffle.png</div>            </figure><p><a href="https://github.com/fssongwei/Youtube-Shuffle" target="_blank" rel="noopener">Source Code</a></p><p>Technologies and libraries using in this project are listing below: </p><p><strong>Front-end Library</strong>: React</p><p><strong>UI Library</strong>: MDUI</p><p><strong>APIs</strong>: Youtube Data API v3</p><p><strong>Other Libraries</strong>: Faker.js (to generate random keywords)</p><p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">Create React App</a>.</p><h3 id="Available-Scripts"><a href="#Available-Scripts" class="headerlink" title="Available Scripts"></a>Available Scripts</h3><p>In the project directory, you can run:</p><h4 id="npm-start"><a href="#npm-start" class="headerlink" title="npm start"></a><code>npm start</code></h4><p>Runs the app in the development mode.<br><br>Open <a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a> to view it in the browser.</p><p>The page will reload if you make edits.<br><br>You will also see any lint errors in the console.</p><h4 id="npm-test"><a href="#npm-test" class="headerlink" title="npm test"></a><code>npm test</code></h4><p>Launches the test runner in the interactive watch mode.<br><br>See the section about <a href="https://facebook.github.io/create-react-app/docs/running-tests" target="_blank" rel="noopener">running tests</a> for more information.</p><h4 id="npm-run-build"><a href="#npm-run-build" class="headerlink" title="npm run build"></a><code>npm run build</code></h4><p>Builds the app for production to the <code>build</code> folder.<br><br>It correctly bundles React in production mode and optimizes the build for the best performance.</p><p>The build is minified and the filenames include the hashes.<br><br>Your app is ready to be deployed!</p><p>See the section about <a href="https://facebook.github.io/create-react-app/docs/deployment" target="_blank" rel="noopener">deployment</a> for more information.</p><h4 id="npm-run-eject"><a href="#npm-run-eject" class="headerlink" title="npm run eject"></a><code>npm run eject</code></h4><p><strong>Note: this is a one-way operation. Once you <code>eject</code>, you can’t go back!</strong></p><p>If you aren’t satisfied with the build tool and configuration choices, you can <code>eject</code> at any time. This command will remove the single build dependency from your project.</p><p>Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except <code>eject</code> will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.</p><p>You don’t have to ever use <code>eject</code>. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.</p><h3 id="Learn-More"><a href="#Learn-More" class="headerlink" title="Learn More"></a>Learn More</h3><p>You can learn more in the <a href="https://facebook.github.io/create-react-app/docs/getting-started" target="_blank" rel="noopener">Create React App documentation</a>.</p><p>To learn React, check out the <a href="https://reactjs.org/" target="_blank" rel="noopener">React documentation</a>.</p><h4 id="Code-Splitting"><a href="#Code-Splitting" class="headerlink" title="Code Splitting"></a>Code Splitting</h4><p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/code-splitting" target="_blank" rel="noopener">https://facebook.github.io/create-react-app/docs/code-splitting</a></p><h4 id="Analyzing-the-Bundle-Size"><a href="#Analyzing-the-Bundle-Size" class="headerlink" title="Analyzing the Bundle Size"></a>Analyzing the Bundle Size</h4><p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size" target="_blank" rel="noopener">https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size</a></p><h4 id="Making-a-Progressive-Web-App"><a href="#Making-a-Progressive-Web-App" class="headerlink" title="Making a Progressive Web App"></a>Making a Progressive Web App</h4><p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app" target="_blank" rel="noopener">https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app</a></p><h4 id="Advanced-Configuration"><a href="#Advanced-Configuration" class="headerlink" title="Advanced Configuration"></a>Advanced Configuration</h4><p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/advanced-configuration" target="_blank" rel="noopener">https://facebook.github.io/create-react-app/docs/advanced-configuration</a></p><h4 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h4><p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/deployment" target="_blank" rel="noopener">https://facebook.github.io/create-react-app/docs/deployment</a></p><h4 id="npm-run-build-fails-to-minify"><a href="#npm-run-build-fails-to-minify" class="headerlink" title="npm run build fails to minify"></a><code>npm run build</code> fails to minify</h4><p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify" target="_blank" rel="noopener">https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;Youtube shuffle is a &lt;strong&gt;R
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
+      <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>Yelp Camp - A full-stack Node.js Web Application Project</title>
@@ -129,9 +157,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -191,9 +219,9 @@
     
       <category term="R" scheme="http://blog.david916.com/tags/R/"/>
     
-      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
-    
       <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
+      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
     
   </entry>
   
@@ -258,7 +286,7 @@
     <link href="http://blog.david916.com/2017/10/11/Anagram%20Game/"/>
     <id>http://blog.david916.com/2017/10/11/Anagram Game/</id>
     <published>2017-10-11T02:11:00.000Z</published>
-    <updated>2020-07-20T16:14:32.045Z</updated>
+    <updated>2020-07-31T08:55:13.766Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is the course project of CS 399 Moblie Application Development. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For example, the word anagram can be rearranged into nag a ram, or the word binary into brainy or the word adobe into abode.</p><p>This android game has 3 different difficulty levels. The game will provide a word and the player will need to enter the correct anagram in order to continue the game. The length of the word will increase with the difficulty of the game. Once the players finish all questions, the game will show a result page with info like the correct rate.</p><p><a href="https://github.com/fssongwei/Anagram" target="_blank" rel="noopener">Source Code</a></p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-10-10-Version-1-0"><a href="#2017-10-10-Version-1-0" class="headerlink" title="2017.10.10 Version 1.0"></a>2017.10.10 Version 1.0</h5><ol><li>Designed and implemented the UI of the game</li><li>Implemented the game logic and a questions library.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/20/2ve5sNAcRFpBzQ1.jpg" alt="main.jpg" title>                </div>                <div class="image-caption">main.jpg</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/20/GlQ71FdLfoxV5D9.png" alt="game.png" title>                </div>                <div class="image-caption">game.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/20/tEbrCWH4cfja8yD.png" alt="info.png" title>                </div>                <div class="image-caption">info.png</div>            </figure>]]></content>
     
