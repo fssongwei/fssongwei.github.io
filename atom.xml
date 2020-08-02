@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-08-02T14:08:43.101Z</updated>
+  <updated>2020-08-02T14:11:52.745Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -17,24 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>React：一次关于onclick的debug</title>
     <link href="http://blog.david916.com/2020/08/02/React%EF%BC%9A%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Eonclick%E7%9A%84debug/"/>
     <id>http://blog.david916.com/2020/08/02/React：一次关于onclick的debug/</id>
     <published>2020-08-02T14:07:59.318Z</published>
-    <updated>2020-08-02T14:08:43.101Z</updated>
+    <updated>2020-08-02T14:11:52.745Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: React：一次关于onclick的debug</span><br><span class="line">categories: Debug</span><br><span class="line">tags: [React,Javascript]</span><br></pre></td></tr></table></figure><h3 id="React：一次关于onclick的debug"><a href="#React：一次关于onclick的debug" class="headerlink" title="React：一次关于onclick的debug"></a>React：一次关于onclick的debug</h3><p>React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;() =&gt; &#123;</span><br><span class="line"><span class="comment">// some code to execute after button clicked</span></span><br><span class="line">&#125;&#125;&gt;</span><br></pre></td></tr></table></figure><p>这个函数可以接受一个参数，即event：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;(event) =&gt; &#123;</span><br><span class="line"><span class="comment">// some code to execute after button clicked</span></span><br><span class="line"><span class="comment">// you can use event object to do something, such as event.target.value</span></span><br><span class="line">&#125;&#125;&gt;</span><br></pre></td></tr></table></figure><p>同时也可以在函数体中使用该component内，该函数外定义的其他变量，且这些变量不需要通过该函数的参数传入，e.g.</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设外部定义了一个名为item的state变量，还有一个从上层component传递下来的callback函数 cbfunc() 需要使用该item变量</span></span><br><span class="line">&lt;button onClick=&#123;() =&gt; cbfunc(item)&#125;&gt;</span><br></pre></td></tr></table></figure><p>下面这种写法是错误的，即不需要将item作为参数传入，且第一个传入的参数会被当成event对象</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;(item) =&gt; cbfunc(item)&#125;&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="React：一次关于onclick的debug"><a href="#React：一次关于onclick的debug" class="headerlink" title="React：一次关于onclick的debug"></a>React：一次关于onclick的debug</h3><p>React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;() =&gt; &#123;</span><br><span class="line"><span class="comment">// some code to execute after button clicked</span></span><br><span class="line">&#125;&#125;&gt;</span><br></pre></td></tr></table></figure><p>这个函数可以接受一个参数，即event：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;(event) =&gt; &#123;</span><br><span class="line"><span class="comment">// some code to execute after button clicked</span></span><br><span class="line"><span class="comment">// you can use event object to do something, such as event.target.value</span></span><br><span class="line">&#125;&#125;&gt;</span><br></pre></td></tr></table></figure><p>同时也可以在函数体中使用该component内，该函数外定义的其他变量，且这些变量不需要通过该函数的参数传入，e.g.</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设外部定义了一个名为item的state变量，还有一个从上层component传递下来的callback函数 cbfunc() 需要使用该item变量</span></span><br><span class="line">&lt;button onClick=&#123;() =&gt; cbfunc(item)&#125;&gt;</span><br></pre></td></tr></table></figure><p>下面这种写法是错误的，即不需要将item作为参数传入，且第一个传入的参数会被当成event对象</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;(item) =&gt; cbfunc(item)&#125;&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+        &lt;h3 id=&quot;React：一次关于onclick的debug&quot;&gt;&lt;a href=&quot;#React：一次关于onclick的debug&quot; class=&quot;headerlink&quot; title=&quot;React：一次关于onclick的debug&quot;&gt;&lt;/a&gt;React：一次关于onclick
       
     
     </summary>
     
     
+      <category term="Debug" scheme="http://blog.david916.com/categories/Debug/"/>
+    
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
+      <category term="React" scheme="http://blog.david916.com/tags/React/"/>
     
   </entry>
   
@@ -179,9 +185,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -241,9 +247,9 @@
     
       <category term="R" scheme="http://blog.david916.com/tags/R/"/>
     
-      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
-    
       <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
+      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
     
   </entry>
   
