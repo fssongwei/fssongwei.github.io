@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="Javascript,React">
-    <meta name="description" content="React：一次关于onclick的debugReact中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行： 123&amp;lt;button onClick=&amp;#123;() =&amp;gt; &amp;#123;	// some code to execute after button clicked&amp;#125;&amp;#125;&amp;gt;  这个函数可以">
+    <meta name="description" content="React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行： 123&amp;lt;button onClick=&amp;#123;() =&amp;gt; &amp;#123;	// some code to execute after button clicked&amp;#125;&amp;#125;&amp;gt;  这个函数可以接受一个参数，即event： 1234&amp;lt;">
 <meta name="keywords" content="Javascript,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React：一次关于onclick的debug">
 <meta property="og:url" content="http://blog.david916.com/2020/08/02/React：一次关于onclick的debug/index.html">
 <meta property="og:site_name" content="David&#39;s Blog">
-<meta property="og:description" content="React：一次关于onclick的debugReact中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行： 123&amp;lt;button onClick=&amp;#123;() =&amp;gt; &amp;#123;	// some code to execute after button clicked&amp;#125;&amp;#125;&amp;gt;  这个函数可以">
+<meta property="og:description" content="React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行： 123&amp;lt;button onClick=&amp;#123;() =&amp;gt; &amp;#123;	// some code to execute after button clicked&amp;#125;&amp;#125;&amp;gt;  这个函数可以接受一个参数，即event： 1234&amp;lt;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-02T14:11:52.745Z">
+<meta property="og:updated_time" content="2020-08-02T14:13:26.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React：一次关于onclick的debug">
-<meta name="twitter:description" content="React：一次关于onclick的debugReact中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行： 123&amp;lt;button onClick=&amp;#123;() =&amp;gt; &amp;#123;	// some code to execute after button clicked&amp;#125;&amp;#125;&amp;gt;  这个函数可以">
+<meta name="twitter:description" content="React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行： 123&amp;lt;button onClick=&amp;#123;() =&amp;gt; &amp;#123;	// some code to execute after button clicked&amp;#125;&amp;#125;&amp;gt;  这个函数可以接受一个参数，即event： 1234&amp;lt;">
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
     
@@ -171,13 +171,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React：一次关于onclick的debug"><span class="post-toc-number">1.</span> <span class="post-toc-text">React：一次关于onclick的debug</span></a></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-React：一次关于onclick的debug"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -200,7 +193,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="React：一次关于onclick的debug"><a href="#React：一次关于onclick的debug" class="headerlink" title="React：一次关于onclick的debug"></a>React：一次关于onclick的debug</h3><p>React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行：</p>
+            <p>React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;() =&gt; &#123;</span><br><span class="line">	<span class="comment">// some code to execute after button clicked</span></span><br><span class="line">&#125;&#125;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>这个函数可以接受一个参数，即event：</p>
@@ -220,7 +213,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-08-02T14:11:52.745Z" itemprop="dateUpdated">2020-08-02 22:11:52</time>
+    Last updated: <time datetime="2020-08-02T14:13:26.525Z" itemprop="dateUpdated">2020-08-02 22:13:26</time>
 </span><br>
 
 
