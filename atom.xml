@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-08-05T05:43:20.835Z</updated>
+  <updated>2020-08-05T08:38:54.009Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://blog.david916.com/2020/08/05/React%20APIs%20Widget/"/>
     <id>http://blog.david916.com/2020/08/05/React APIs Widget/</id>
     <published>2020-08-05T03:31:25.319Z</published>
-    <updated>2020-08-05T05:43:20.835Z</updated>
+    <updated>2020-08-05T08:38:54.009Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>This <strong>React</strong> app contains four different widgets:</p><ol><li><p>A translate widget using <a href="https://cloud.google.com/translate" target="_blank" rel="noopener">Google Translate API</a></p><p><img src="https://i.loli.net/2020/08/05/LyblAxXJoU2taBh.png" alt="Translate Widget.png"></p></li><li><p>A wiki search widget using <a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank" rel="noopener">Wikepedia API</a></p><p><img src="https://i.loli.net/2020/08/05/iLCZd4Tpsx61v7Y.png" alt="Wiki Widget.png"></p></li><li><p>A photo search widget using <a href="https://unsplash.com/developers" target="_blank" rel="noopener">Unsplash API</a></p><p><img src="https://i.loli.net/2020/08/05/37iXTd9qkC6JEw4.png" alt="Photo Widget.png"></p></li><li><p>A youtube widget using <a href="https://developers.google.com/youtube/v3" target="_blank" rel="noopener">Youtube Data API v3</a></p></li></ol><p>Other tools &amp; libraries include:</p><ol><li><a href="https://fezvrasta.github.io/bootstrap-material-design/" target="_blank" rel="noopener">Bootstrap Material Design</a> - UI Library</li><li><a href="https://github.com/axios/axios" target="_blank" rel="noopener">Axios</a> - HTTP Library</li><li><a href="https://www.npmjs.com/package/faker" target="_blank" rel="noopener">Faker.js</a> - Random String Generator</li></ol><p><a href="https://react-api-s-widgets.vercel.app" target="_blank" rel="noopener">Live Demo</a><br><a href="https://github.com/fssongwei/React-APIs-Widgets" target="_blank" rel="noopener">Source Code</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>This <strong>React</strong> app contains four different widgets:</p><ol><li><p>A translate widget using <a href="https://cloud.google.com/translate" target="_blank" rel="noopener">Google Translate API</a></p><p><img src="https://i.loli.net/2020/08/05/LyblAxXJoU2taBh.png" alt="Translate Widget.png"></p></li><li><p>A wiki search widget using <a href="https://www.mediawiki.org/wiki/API:Main_page" target="_blank" rel="noopener">Wikepedia API</a></p><p><img src="https://i.loli.net/2020/08/05/iLCZd4Tpsx61v7Y.png" alt="Wiki Widget.png"></p></li><li><p>A photo search widget using <a href="https://unsplash.com/developers" target="_blank" rel="noopener">Unsplash API</a></p><p><img src="https://i.loli.net/2020/08/05/37iXTd9qkC6JEw4.png" alt="Photo Widget.png"></p></li><li><p>A youtube widget using <a href="https://developers.google.com/youtube/v3" target="_blank" rel="noopener">Youtube Data API v3</a></p><p><img src="https://i.loli.net/2020/08/05/MJBP5OfcsyxFVQb.png" alt="Youtube Widget.png"></p></li></ol><p>Other tools &amp; libraries include:</p><ol><li><a href="https://fezvrasta.github.io/bootstrap-material-design/" target="_blank" rel="noopener">Bootstrap Material Design</a> - UI Library</li><li><a href="https://github.com/axios/axios" target="_blank" rel="noopener">Axios</a> - HTTP Library</li><li><a href="https://www.npmjs.com/package/faker" target="_blank" rel="noopener">Faker.js</a> - Random String Generator</li></ol><p><a href="https://react-api-s-widgets.vercel.app" target="_blank" rel="noopener">Live Demo</a><br><a href="https://github.com/fssongwei/React-APIs-Widgets" target="_blank" rel="noopener">Source Code</a></p>]]></content>
     
     <summary type="html">
     
@@ -270,9 +270,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -332,9 +332,9 @@
     
       <category term="R" scheme="http://blog.david916.com/tags/R/"/>
     
-      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
-    
       <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
+      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
     
   </entry>
   
