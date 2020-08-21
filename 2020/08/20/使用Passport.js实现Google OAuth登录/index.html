@@ -21,21 +21,21 @@
     
     
     <meta name="keywords" content="Nodejs,Express,Javascript">
-    <meta name="description" content="##Google OAuth 2.0 登录流程    client向server发起GET /auth/google请求  server将client重定向至google oauth登录页https://accounts.google.com/o/oauth2/auth，并附带以下查询参数集：  response_type: code 登录后返回授权码 client_id: GOOGLE_CLIE">
+    <meta name="description" content="Source Code Google OAuth 2.0 登录流程   client向server发起GET /auth/google请求  server将client重定向至google oauth登录页https://accounts.google.com/o/oauth2/auth，并附带以下查询参数集：  response_type: code 登录后返回授权码 client_id: GO">
 <meta name="keywords" content="Nodejs,Express,Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Passport.js实现Google OAuth登录">
 <meta property="og:url" content="http://blog.david916.com/2020/08/20/使用Passport.js实现Google OAuth登录/index.html">
 <meta property="og:site_name" content="David&#39;s Blog">
-<meta property="og:description" content="##Google OAuth 2.0 登录流程    client向server发起GET /auth/google请求  server将client重定向至google oauth登录页https://accounts.google.com/o/oauth2/auth，并附带以下查询参数集：  response_type: code 登录后返回授权码 client_id: GOOGLE_CLIE">
+<meta property="og:description" content="Source Code Google OAuth 2.0 登录流程   client向server发起GET /auth/google请求  server将client重定向至google oauth登录页https://accounts.google.com/o/oauth2/auth，并附带以下查询参数集：  response_type: code 登录后返回授权码 client_id: GO">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2020/08/20/fA12XlsdSWVkHQD.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/08/20/mNQkqEAIJrslYZH.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/08/21/JsmB7bFPDrS2wKQ.jpg">
-<meta property="og:updated_time" content="2020-08-21T11:26:49.302Z">
+<meta property="og:updated_time" content="2020-08-21T12:18:44.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Passport.js实现Google OAuth登录">
-<meta name="twitter:description" content="##Google OAuth 2.0 登录流程    client向server发起GET /auth/google请求  server将client重定向至google oauth登录页https://accounts.google.com/o/oauth2/auth，并附带以下查询参数集：  response_type: code 登录后返回授权码 client_id: GOOGLE_CLIE">
+<meta name="twitter:description" content="Source Code Google OAuth 2.0 登录流程   client向server发起GET /auth/google请求  server将client重定向至google oauth登录页https://accounts.google.com/o/oauth2/auth，并附带以下查询参数集：  response_type: code 登录后返回授权码 client_id: GO">
 <meta name="twitter:image" content="https://i.loli.net/2020/08/20/fA12XlsdSWVkHQD.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
@@ -175,6 +175,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Google-OAuth-2-0-登录流程"><span class="post-toc-number">1.</span> <span class="post-toc-text">Google OAuth 2.0 登录流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cookie验证流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">cookie验证流程</span></a></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-使用Passport.js实现Google OAuth登录"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -197,8 +204,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>##Google OAuth 2.0 登录流程</p>
-<img src="https://i.loli.net/2020/08/20/fA12XlsdSWVkHQD.jpg" alt="google oauth workflow.jpg" style="zoom: 33%;">
+            <p><a href="https://github.com/fssongwei/Emaily-Server/tree/d6e87442e2ed7e5769b16352ab25d8af2522c43a" target="_blank" rel="noopener">Source Code</a></p>
+<h3 id="Google-OAuth-2-0-登录流程"><a href="#Google-OAuth-2-0-登录流程" class="headerlink" title="Google OAuth 2.0 登录流程"></a>Google OAuth 2.0 登录流程</h3><img src="https://i.loli.net/2020/08/20/fA12XlsdSWVkHQD.jpg" alt="google oauth workflow.jpg" style="zoom: 33%;">
 
 <ol>
 <li><p>client向server发起<code>GET /auth/google</code>请求</p>
@@ -264,8 +271,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">const</span> passport = <span class="built_in">require</span>(<span class="string">"passport"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"./passportConfig"</span>);</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://juejin.im/post/6844903509016444942" target="_blank" rel="noopener">Ref1</a> <a href="http://www.zchengjoey.com/posts/使用oauth2登录访问谷歌API/" target="_blank" rel="noopener">Ref2</a></p>
-<p>##cookie验证流程</p>
-<figure class="image-bubble">
+<h3 id="cookie验证流程"><a href="#cookie验证流程" class="headerlink" title="cookie验证流程"></a>cookie验证流程</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://i.loli.net/2020/08/21/JsmB7bFPDrS2wKQ.jpg" alt="session workflow.jpg" title>
@@ -302,7 +308,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-08-21T11:26:49.302Z" itemprop="dateUpdated">2020-08-21 19:26:49</time>
+    Last updated: <time datetime="2020-08-21T12:18:44.773Z" itemprop="dateUpdated">2020-08-21 20:18:44</time>
 </span><br>
 
 
