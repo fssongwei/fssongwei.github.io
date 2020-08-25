@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-08-21T12:18:44.773Z</updated>
+  <updated>2020-08-25T16:04:46.154Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次关于express sameSite cookies的debug</title>
+    <link href="http://blog.david916.com/2020/08/25/%E4%B8%80%E6%AC%A1%E5%85%B3%E4%BA%8Eexpress%20sameSite%20cookies%E7%9A%84debug/"/>
+    <id>http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/</id>
+    <published>2020-08-25T15:31:28.082Z</published>
+    <updated>2020-08-25T16:04:46.154Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。</p><p>今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的cookie，导致无法通过api获取用户数据等信息。然而之前在开发环境测试的时候，api操作确实带上了cookie并成功获取数据，并且：</p><ol><li>在开发和生产环境中后端都设置了<code>cors({ credentials: true, origin: process.env.CLIENT_BASE_URL })</code></li><li>前端axios获取api数据时也设置了<code>axios.defaults.withCredentials = true;</code></li><li>生产环境中前端地址<code>localhost:3000</code>和后端地址<code>localhost:5000</code>同属于跨域，但测试正常</li></ol><p>查看console，发现以下错误信息：</p><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A cookie associated with a cross-site resource at http://MYAPI.URL was set</span><br><span class="line">without the `SameSite` attribute. A future release of Chrome will only deliver </span><br><span class="line">cookies with cross-site requests if they are set with `SameSite=None` and </span><br><span class="line">`Secure`. You can review cookies in developer tools under </span><br><span class="line"><span class="meta">Application&gt;</span><span class="bash">Storage&gt;Cookies and see more details at </span></span><br><span class="line">https://www.chromestatus.com/feature/5088147346030592 and </span><br><span class="line">https://www.chromestatus.com/feature/5633521622188032.</span><br></pre></td></tr></table></figure><p>搜索后发现，该错误是由于chrome等浏览器最近的安全升级导致，该升级要求所有跨域cookie操作都必须要对cookie设置为<code>samesite=&quot;none&quot;</code>和<code>secure=&quot;true&quot;</code>，而且该升级只针对于host不同的情况，其余跨域诸如端口号等不受到影响，这也解释了为什么开发环境测试通过而生产环境出现错误。 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Set-Cookie/SameSite" target="_blank" rel="noopener">MDN参考</a></p><p>后续设置express-session</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sessionConfig = &#123;</span><br><span class="line">  secret: process.env.SESSION_SECRET,</span><br><span class="line">  resave: <span class="literal">false</span>,</span><br><span class="line">  saveUninitialized: <span class="literal">false</span>,</span><br><span class="line">  cookie: &#123;</span><br><span class="line">    sameSite: <span class="string">"none"</span>,</span><br><span class="line">    secure: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">app.use(session(sessionConfig));</span><br></pre></td></tr></table></figure><p>修改后新问题又来了，这次后端直接不设置cookie了，即response中不包含set-cookie。查阅文档后发现当设置cookie为secure时，需要通过https设置cookie，使用http将默认不设置cookie。因此express加多一行代码</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.set(<span class="string">'trust proxy'</span>, <span class="number">1</span>) <span class="comment">// trust first proxy</span></span><br></pre></td></tr></table></figure><p>这次在生产环境测试成功，但生产环境的前后端地址都是由第三方提供的https地址，不知道为何也会出现这样的问题，猜想可能需要自行配置有效证书。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。&lt;/p&gt;
+&lt;p&gt;今天在将本地代码deploy到生产环境的时候，发现go
+      
+    
+    </summary>
+    
+    
+      <category term="Debug" scheme="http://blog.david916.com/categories/Debug/"/>
+    
+    
+      <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Passport.js实现Google OAuth登录</title>
@@ -300,9 +331,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
-    
       <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
+      <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -362,9 +393,9 @@
     
       <category term="R" scheme="http://blog.david916.com/tags/R/"/>
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
   </entry>
   

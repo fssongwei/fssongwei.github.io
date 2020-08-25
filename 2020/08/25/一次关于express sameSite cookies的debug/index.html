@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>一次关于express sameSite cookies的debug | David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Nodejs,Express,Javascript">
+    <meta name="description" content="最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。 今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的co">
+<meta name="keywords" content="Nodejs,Express,Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一次关于express sameSite cookies的debug">
+<meta property="og:url" content="http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/index.html">
+<meta property="og:site_name" content="David&#39;s Blog">
+<meta property="og:description" content="最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。 今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的co">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-08-25T16:04:46.154Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一次关于express sameSite cookies的debug">
+<meta name="twitter:description" content="最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。 今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的co">
+    
+        <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/icon.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wei Song</h5>
+          <a href="mailto:ws446@cornell.edu" title="ws446@cornell.edu" class="mail">ws446@cornell.edu</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/fssongwei" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://david916.com" target="_blank" >
+                <i class="icon icon-lg icon-address-card"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.david916.com/docs/CV_EN.pdf" target="_blank" >
+                <i class="icon icon-lg icon-file"></i>
+                CV
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">一次关于express sameSite cookies的debug</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">一次关于express sameSite cookies的debug</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-08-25T15:31:28.082Z" itemprop="datePublished" class="page-time">
+  2020-08-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Debug/">Debug</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-一次关于express sameSite cookies的debug"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">一次关于express sameSite cookies的debug</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-08-25 23:31:28" datetime="2020-08-25T15:31:28.082Z"  itemprop="datePublished">2020-08-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Debug/">Debug</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。</p>
+<p>今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的cookie，导致无法通过api获取用户数据等信息。然而之前在开发环境测试的时候，api操作确实带上了cookie并成功获取数据，并且：</p>
+<ol>
+<li>在开发和生产环境中后端都设置了<code>cors({ credentials: true, origin: process.env.CLIENT_BASE_URL })</code></li>
+<li>前端axios获取api数据时也设置了<code>axios.defaults.withCredentials = true;</code></li>
+<li>生产环境中前端地址<code>localhost:3000</code>和后端地址<code>localhost:5000</code>同属于跨域，但测试正常</li>
+</ol>
+<p>查看console，发现以下错误信息：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A cookie associated with a cross-site resource at http://MYAPI.URL was set</span><br><span class="line">without the `SameSite` attribute. A future release of Chrome will only deliver </span><br><span class="line">cookies with cross-site requests if they are set with `SameSite=None` and </span><br><span class="line">`Secure`. You can review cookies in developer tools under </span><br><span class="line"><span class="meta">Application&gt;</span><span class="bash">Storage&gt;Cookies and see more details at </span></span><br><span class="line">https://www.chromestatus.com/feature/5088147346030592 and </span><br><span class="line">https://www.chromestatus.com/feature/5633521622188032.</span><br></pre></td></tr></table></figure>
+
+<p>搜索后发现，该错误是由于chrome等浏览器最近的安全升级导致，该升级要求所有跨域cookie操作都必须要对cookie设置为<code>samesite=&quot;none&quot;</code>和<code>secure=&quot;true&quot;</code>，而且该升级只针对于host不同的情况，其余跨域诸如端口号等不受到影响，这也解释了为什么开发环境测试通过而生产环境出现错误。 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Set-Cookie/SameSite" target="_blank" rel="noopener">MDN参考</a></p>
+<p>后续设置express-session</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sessionConfig = &#123;</span><br><span class="line">  secret: process.env.SESSION_SECRET,</span><br><span class="line">  resave: <span class="literal">false</span>,</span><br><span class="line">  saveUninitialized: <span class="literal">false</span>,</span><br><span class="line">  cookie: &#123;</span><br><span class="line">    sameSite: <span class="string">"none"</span>,</span><br><span class="line">    secure: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">app.use(session(sessionConfig));</span><br></pre></td></tr></table></figure>
+
+<p>修改后新问题又来了，这次后端直接不设置cookie了，即response中不包含set-cookie。查阅文档后发现当设置cookie为secure时，需要通过https设置cookie，使用http将默认不设置cookie。因此express加多一行代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.set(<span class="string">'trust proxy'</span>, <span class="number">1</span>) <span class="comment">// trust first proxy</span></span><br></pre></td></tr></table></figure>
+
+<p>这次在生产环境测试成功，但生产环境的前后端地址都是由第三方提供的https地址，不知道为何也会出现这样的问题，猜想可能需要自行配置有效证书。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-08-25T16:04:46.154Z" itemprop="dateUpdated">2020-08-26 00:04:46</time>
+</span><br>
+
+
+        
+        Ref link：<a href="/2020/08/25/一次关于express sameSite cookies的debug/" target="_blank" rel="external">http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://blog.david916.com">
+            <img src="/img/avatar.jpg" alt="Wei Song">
+            Wei Song
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/&title=《一次关于express sameSite cookies的debug》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/&title=《一次关于express sameSite cookies的debug》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《一次关于express sameSite cookies的debug》 — David's Blog&url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/&via=http://blog.david916.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/08/20/使用Passport.js实现Google OAuth登录/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">使用Passport.js实现Google OAuth登录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "jDlfbKIsIQHS3k2z9iFPSh5I-gzGzoHsz",
+            appKey: "eKDvrz93AEm6TOaJznROU600",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total Visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total Visits：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wei Song &copy; 2019 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/&title=《一次关于express sameSite cookies的debug》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/&title=《一次关于express sameSite cookies的debug》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《一次关于express sameSite cookies的debug》 — David's Blog&url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/&via=http://blog.david916.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2020/08/25/一次关于express sameSite cookies的debug/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACo0lEQVR42u3aS3LCQAwFQO5/6eQAYHj6DHGq2ivKRexpFjPKkx6P+Pp5upL7z5+vnnn1V8lzFi48PDy88dJzxvNzkjvJ898/LVkzHh4e3mne++UmC33/nWRznz8HDw8P7/68pBRONve8KsbDw8P7v7x80cmdXlSBh4eH97e8JIzIQ4E8gEjCjjy8wMPDw/sOL+8i3efzkf4eHh4e3rir3muGJdt6dTShuVo8PDy8A7x8w528eBLgzgNfPDw8vO/wttpUkwg4H736UHzj4eHhHeP1Wv55dNssiOOEoRBJ4OHh4Y15vSGqJKqYhxfVQOSSioeHh3eAN39lXl5XS+douKrXzcPDw8Nr8Rb+4R8PUVXD4sLxgIeHh7fKqxbKJwrx6mGTH114eHh4J3j5K5NyNm9Z7RbiH8JcPDw8vFVesgXnzbBd5CQ6wcPDwzvHyzf6ams/jyd6Accoa8HDw8Nb4o06ZsXDpnq0LMxE4OHh4S3xek2secMsx4zKcTw8PLwv8vJX5oFvoWXVKrVf4PHw8PCO8XY3+u8PXV0+Ew8PD+8AL4luq8uttvl78W6+cjw8PLxdXv76rQ292kIbxcd4eHh4B3i7sUJvPKs65tUcusLDw8Nb5VUL6+rwQa/dNRnSGkUSeHh4eAGv929/cmceYTTL6PxMw8PDwxvzkk1/4eQpHgOTeBcPDw/vHK/3ml6rrPrN6s+Eh4eHd47Xa/b34oY81JjMPhRGB/Dw8PBavHnPqBoBV6PeEw0zPDw8vDlvMnqVb9PVkdO1EhwPDw/vGC9vjM1f2Sx84wMMDw8P7/68ySBCzm62wfDw8PBuwzsRzlZDitFkBB4eHt6YVx0dmGzWyaKrP9/yZAQeHh5ecS9NNvdeyJuPJlSRyxkGHh4e3uvrF2V5xTpQm6zkAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
