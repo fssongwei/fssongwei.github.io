@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="David&#39;s Blog">
 <meta property="og:description" content="最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。 今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的co">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-25T16:04:46.154Z">
+<meta property="og:updated_time" content="2020-08-25T16:06:25.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一次关于express sameSite cookies的debug">
 <meta name="twitter:description" content="最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。 今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的co">
@@ -207,7 +207,7 @@
 <p>后续设置express-session</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sessionConfig = &#123;</span><br><span class="line">  secret: process.env.SESSION_SECRET,</span><br><span class="line">  resave: <span class="literal">false</span>,</span><br><span class="line">  saveUninitialized: <span class="literal">false</span>,</span><br><span class="line">  cookie: &#123;</span><br><span class="line">    sameSite: <span class="string">"none"</span>,</span><br><span class="line">    secure: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">app.use(session(sessionConfig));</span><br></pre></td></tr></table></figure>
 
-<p>修改后新问题又来了，这次后端直接不设置cookie了，即response中不包含set-cookie。查阅文档后发现当设置cookie为secure时，需要通过https设置cookie，使用http将默认不设置cookie。因此express加多一行代码</p>
+<p>修改后新问题又来了，这次后端直接不设置cookie了，即response中不包含set-cookie。查阅<a href="https://github.com/expressjs/session#cookiesecure" target="_blank" rel="noopener">文档</a>后发现当设置cookie为secure时，需要通过https设置cookie，使用http将默认不设置cookie。因此express加多一行代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.set(<span class="string">'trust proxy'</span>, <span class="number">1</span>) <span class="comment">// trust first proxy</span></span><br></pre></td></tr></table></figure>
 
 <p>这次在生产环境测试成功，但生产环境的前后端地址都是由第三方提供的https地址，不知道为何也会出现这样的问题，猜想可能需要自行配置有效证书。</p>
@@ -219,7 +219,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-08-25T16:04:46.154Z" itemprop="dateUpdated">2020-08-26 00:04:46</time>
+    Last updated: <time datetime="2020-08-25T16:06:25.461Z" itemprop="dateUpdated">2020-08-26 00:06:25</time>
 </span><br>
 
 
@@ -296,7 +296,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/09/07/西北游vlog/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Travel to the Northwest of China 西北游 vlog</h4>
+      </a>
+    </div>
   
 
   
