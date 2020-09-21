@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="David&#39;s Blog">
 <meta property="og:description" content="最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。 今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的co">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-21T03:55:31.131Z">
+<meta property="og:updated_time" content="2020-09-21T03:57:49.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一次关于express sameSite cookies的debug">
 <meta name="twitter:description" content="最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。 今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回的co">
@@ -212,7 +212,7 @@
 
 <p>这次在生产环境测试成功，但生产环境的前后端地址都是由第三方提供的https地址，不知道为何也会出现这样的问题，猜想可能需要自行配置有效证书。</p>
 <p><strong>Update on 2020-09-21</strong></p>
-<p>上述问题其实是由于苹果safari浏览器的最新安全策略所导致的，现时safari浏览器无论是否设置cookie为secure或使用https，都仅允许同一域名下的跨域异步操作，在Google Chrome和Firefox浏览器测试中不存在上述问题。将server（<a href="https://shop-api.wei.ai）和client（https://shop.wei.ai）部署到同一域名下后问题解决。" target="_blank" rel="noopener">https://shop-api.wei.ai）和client（https://shop.wei.ai）部署到同一域名下后问题解决。</a></p>
+<p>上述问题其实是由于苹果safari浏览器的最新安全策略所导致的，现时safari浏览器无论是否设置cookie为secure或使用https，都仅允许同一域名下的跨域异步操作，在Google Chrome和Firefox浏览器测试中不存在上述问题。将server (<a href="https://shop-api.wei.ai" target="_blank" rel="noopener">https://shop-api.wei.ai</a>) 和client (<a href="https://shop.wei.ai" target="_blank" rel="noopener">https://shop.wei.ai</a>)  部署到同一域名下后问题解决。</p>
 
         </div>
 
@@ -221,7 +221,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-09-21T03:55:31.131Z" itemprop="dateUpdated">2020-09-21 11:55:31</time>
+    Last updated: <time datetime="2020-09-21T03:57:49.369Z" itemprop="dateUpdated">2020-09-21 11:57:49</time>
 </span><br>
 
 
