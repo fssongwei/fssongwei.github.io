@@ -17,6 +17,8 @@
     <title>David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <meta name="theme-color" content="#3F51B5">
+    
     
     <meta name="keywords" content>
     <meta name="description" content="Developer. Computer &amp; Information Science Graduate Student @ Cornell.">
@@ -32,7 +34,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
+    <link rel="shortcut icon" href="/img/icon.jpg">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -49,19 +51,68 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Wei Song</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:ws446@cornell.edu" title="ws446@cornell.edu" class="mail">ws446@cornell.edu</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/fssongwei" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://wei.ai" target="_blank" >
+                <i class="icon icon-lg icon-address-card"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://wei.ai/docs/CV_EN.pdf" target="_blank" >
+                <i class="icon icon-lg icon-file"></i>
+                CV
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -76,6 +127,20 @@
         </a>
         <div class="flex-col header-title ellipsis">David&#39;s Blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -128,7 +193,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        介绍最近接触到MERN技术栈，想做一个全栈的项目练练手...
+        介绍最近接触到MERN技术栈，想做一个全栈的项目练练手。正好之前在上网课的时候有提到如何使用第三方服务如stripe搭建一个支付系统，把这个支付系统拓展一下就可以变为一个电商网站（或者二手交易网站）了。整个项目大概花了一星期不到的时间（周一到周六完成开发，周日写这篇文章），一开始以为会是一个简单的CRUD应用，然而做的时候才体会到该项目的复杂性，有很多模块之间相互影响，还有很多安全性、跨域问...
     
 
         <a href="/2020/09/20/从零开始用MERN搭建一个电商网站/" class="post-more waves-effect waves-button">
@@ -175,7 +240,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        I recently traveled to Ning...
+        I recently traveled to Ningxia and Shaanxi provinces in China with my undergrad roommates and friends. I have been to the desert in Zhongwei city (中卫), the museum of Terracotta Army (兵马俑), and Moun...
     
 
         <a href="/2020/09/07/西北游vlog/" class="post-more waves-effect waves-button">
@@ -216,7 +281,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        最近在写一个google / facebook oau...
+        最近在写一个google / facebook oauth登录系统，前端使用react，后端使用nodejs + express，前后端分别部署在vercel和heroku上，不可避免的遇到很多跨域问题。
+今天在将本地代码deploy到生产环境的时候，发现google oauth虽然能成功调用callback url重定向到后端，后端也能设置cookie，但后续的api操作却没有带上之前返回...
     
 
         <a href="/2020/08/25/一次关于express sameSite cookies的debug/" class="post-more waves-effect waves-button">
@@ -264,7 +330,15 @@
 
     
         Source Code
-Google OAuth 2....
+Google OAuth 2.0 登录流程
+
+
+client向server发起GET /auth/google请求
+
+server将client重定向至google oauth登录页https://accounts.google.com/o/oauth2/auth，并附带以下查询参数集：
+
+response_type: code 登录后返回授权码
+client_id:...
     
 
         <a href="/2020/08/20/使用Passport.js实现Google OAuth登录/" class="post-more waves-effect waves-button">
@@ -311,7 +385,18 @@ Google OAuth 2....
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        IntroductionThis React app ...
+        IntroductionThis React app contains four different widgets:
+
+A translate widget using Google Translate API
+
+
+A wiki search widget using Wikepedia API
+
+
+A photo search widget using Unsplash API
+
+
+A ...
     
 
         <a href="/2020/08/05/React APIs Widget/" class="post-more waves-effect waves-button">
@@ -358,7 +443,16 @@ Google OAuth 2....
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Introduction假设我们需要实现一种类似goo...
+        Introduction假设我们需要实现一种类似google的搜索提示功能，即用户输入搜索词的过程中，输入框的下方会同步显示搜索的候选项：
+
+                
+                    
+                    
+                
+                
+            
+
+基本方案：通过input的onChan...
     
 
         <a href="/2020/08/03/React: Debounced Textfield/" class="post-more waves-effect waves-button">
@@ -405,7 +499,11 @@ Google OAuth 2....
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        React中可以向onClick（onSubmit，o...
+        React中可以向onClick（onSubmit，onChange等同理）中传入一个函数，这个函数会在组件被click时执行：
+123&lt;button onClick=&#123;() =&gt; &#123;	// some code to execute after button clicked&#125;&#125;&gt;
+
+这个函数可以接受一个参数，即event：
+1234&...
     
 
         <a href="/2020/08/02/React：一次关于onclick的debug/" class="post-more waves-effect waves-button">
@@ -453,7 +551,8 @@ Google OAuth 2....
 
     
         IntroductionLive Demo
-Sourc...
+Source Code
+Youtube shuffle is a React app using Youtube Data API. It has a personalized user interface which allows users to search a Youtube video and play it. It also inclu...
     
 
         <a href="/2020/07/29/Youtube Shuffle/" class="post-more waves-effect waves-button">
@@ -500,7 +599,7 @@ Sourc...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        IntroductionYelp Camp is a ...
+        IntroductionYelp Camp is a Yelp-like node.js web app. It’s the final course project of the Web Develop Bootcamp course in Udemy. Users and campground owners can upload their campground information ...
     
 
         <a href="/2020/07/19/Yelp Camp - A full-stack Node.js Web Application Project/" class="post-more waves-effect waves-button">
@@ -547,7 +646,7 @@ Sourc...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        IntroductionDwitter is a Tw...
+        IntroductionDwitter is a Twitter-like social media web app written in Javascript. The name “Dwitter” stands for “David’s Twitter”. Users can post their thoughs, follow other user, comment and like ...
     
 
         <a href="/2020/07/17/Dwitter - A Twitter-like Social Media App/" class="post-more waves-effect waves-button">
@@ -580,6 +679,15 @@ Sourc...
         <footer class="footer">
     <div class="top">
         
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total Visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total Visits：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
 
         <p>
             
@@ -589,7 +697,7 @@ Sourc...
         </p>
     </div>
     <div class="bottom">
-        <p><span>Wei Song &copy; 2020</span>
+        <p><span>Wei Song &copy; 2019 - 2020</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -603,9 +711,55 @@ Sourc...
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/&title=David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/&title=David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=David's Blog&url=http://blog.david916.com/&via=http://blog.david916.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABWElEQVR42u3aQQ7DIAxEUe5/abqtVEFmbKgU+7OKaEpeK+GAzRhym4v2/en+/nGjwYJViDW37fcel7vqeaDDgtWStZqhSgjIjLPshwUL1na4/cRWAgQsWLD+EyCUa1iwYMUWzfsA4YaMY2t5WLBKsPSsTv76Sn4LFqyXs6bZ3MfPUIMFqxtLn8Cnkrz6+LBgdWbtl7yZV7i+7IYFqxtLT7/GNpn2P+RmhWHBKsTap1ndV7KSTnoYHxasZqxYosd9vHv4ABasniylAKmECbdHgsKC1Yalp3Hz1RsjoMCC1ZilJ3OVIJI5pgALVk+W++WzwUIqrsCCVZQVPAqg/2IlYQQLVntWLHmUCSX5sAILVlWWe/AuUyK9squGBasQ60Ah5GgAggULll2ZSQSOYIETFqz2LGXb6ZZq7LorLFhFWfpA+oLYPdAAC1Zn1oH6jLwlvrLWhgXr3awPNF01/YgBwbQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
@@ -613,9 +767,31 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 <script src="/js/main.min.js?v=1.7.2"></script>
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

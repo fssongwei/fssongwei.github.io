@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Android Calculator App | David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java,Android">
+    <meta name="description" content="IntroductionThis is the course project of CS 399 Moblie Application Development. The goal of this project is to develop a calculator android application that provides basic calculation functions like">
+<meta name="keywords" content="Java,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Calculator App">
+<meta property="og:url" content="http://blog.david916.com/2017/10/10/Android Calculator App/index.html">
+<meta property="og:site_name" content="David&#39;s Blog">
+<meta property="og:description" content="IntroductionThis is the course project of CS 399 Moblie Application Development. The goal of this project is to develop a calculator android application that provides basic calculation functions like">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.loli.net/2020/07/20/gXYnOKSz3DjxBpl.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/07/20/vpzwisVSjcl4gr1.jpg">
+<meta property="og:updated_time" content="2020-07-20T15:13:18.768Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Calculator App">
+<meta name="twitter:description" content="IntroductionThis is the course project of CS 399 Moblie Application Development. The goal of this project is to develop a calculator android application that provides basic calculation functions like">
+<meta name="twitter:image" content="https://i.loli.net/2020/07/20/gXYnOKSz3DjxBpl.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/icon.jpg">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Wei Song</h5>
+          <a href="mailto:ws446@cornell.edu" title="ws446@cornell.edu" class="mail">ws446@cornell.edu</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/fssongwei" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://wei.ai" target="_blank" >
+                <i class="icon icon-lg icon-address-card"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://wei.ai/docs/CV_EN.pdf" target="_blank" >
+                <i class="icon icon-lg icon-file"></i>
+                CV
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android Calculator App</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android Calculator App</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-10-10T02:10:00.000Z" itemprop="datePublished" class="page-time">
+  2017-10-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Projects/">Projects</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number">1.</span> <span class="post-toc-text">Introduction</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Updates"><span class="post-toc-number">2.</span> <span class="post-toc-text">Updates</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2017-10-10-Version-1-0"><span class="post-toc-number">2.0.0.1.</span> <span class="post-toc-text">2017.10.10 Version 1.0</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">3.</span> <span class="post-toc-text">Demo</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Android Calculator App"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Android Calculator App</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-10-10 10:10:00" datetime="2017-10-10T02:10:00.000Z"  itemprop="datePublished">2017-10-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Projects/">Projects</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is the course project of CS 399 Moblie Application Development. The goal of this project is to develop a calculator android application that provides basic calculation functions like add, subtract, multiply, divide, square root, and percentage. The app has a simple user interface and sounds effect when users click on the button.</p>
+<p>When first we start to design this app, we try to use the GridLayout to implement the UI of this application. But the problem is the GridLayout in Android is kind of a new thing, which only supports the larger size of the screens. While we try to implement this in a smaller size screen, all of the components went outside of the screen and there is no solution on the internet to solve this problem. Finally, after some research, we decide to use the Tablelayout, which is more flexible to different kinds of devices and reduces the complication of the UI code. It is also flexible in both vertical and landscape views. The whole color design is inspired by the calculator design of the iOS original calculator application. </p>
+<p>For the division function, it requires the second parameter not to be 0, otherwise, it will throw an error and play the error sound. Another issue is to keep the calculation continuously while we keep pressing the operator button after we got a result. When we first calculate a result, we will store it into a variable and use it as the first parameter of the next calculation.</p>
+<p>Besides, due to the different sizes of the screens of the devices, we had to limit the digits of the number less than 10. If the digits of the calculation result are greater than 10, we will use the scientific notation to represent the result.</p>
+<p><a href="https://storage.googleapis.com/www.david916.com/projects/SuperCalculator.apk" target="_blank" rel="noopener">APK Download</a><br><a href="https://github.com/fssongwei/Android-Calculator" target="_blank" rel="noopener">Source Code</a></p>
+<h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-10-10-Version-1-0"><a href="#2017-10-10-Version-1-0" class="headerlink" title="2017.10.10 Version 1.0"></a>2017.10.10 Version 1.0</h5><ol>
+<li>Designed and implemented the user interface of the calculator app</li>
+<li>Developed the calculator function, such as addition, substraction, multiplication and division.</li>
+</ol>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="https://i.loli.net/2020/07/20/gXYnOKSz3DjxBpl.jpg" alt="calculator-Main.jpg" style="zoom: 25%;">
+
+
+
+<img src="https://i.loli.net/2020/07/20/vpzwisVSjcl4gr1.jpg" alt="calculator-Landscape.jpg" style="zoom:25%;">
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-07-20T15:13:18.768Z" itemprop="dateUpdated">2020-07-20 23:13:18</time>
+</span><br>
+
+
+        
+        Ref link：<a href="/2017/10/10/Android Calculator App/" target="_blank" rel="external">http://blog.david916.com/2017/10/10/Android Calculator App/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://blog.david916.com">
+            <img src="/img/avatar.jpg" alt="Wei Song">
+            Wei Song
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2017/10/10/Android Calculator App/&title=《Android Calculator App》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2017/10/10/Android Calculator App/&title=《Android Calculator App》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2017/10/10/Android Calculator App/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Calculator App》 — David's Blog&url=http://blog.david916.com/2017/10/10/Android Calculator App/&via=http://blog.david916.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2017/10/10/Android Calculator App/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/10/11/Anagram Game/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Anagram Game</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "jDlfbKIsIQHS3k2z9iFPSh5I-gzGzoHsz",
+            appKey: "eKDvrz93AEm6TOaJznROU600",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total Visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total Visits：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Wei Song &copy; 2019 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2017/10/10/Android Calculator App/&title=《Android Calculator App》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2017/10/10/Android Calculator App/&title=《Android Calculator App》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2017/10/10/Android Calculator App/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Calculator App》 — David's Blog&url=http://blog.david916.com/2017/10/10/Android Calculator App/&via=http://blog.david916.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2017/10/10/Android Calculator App/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHklEQVR42u3aSW7DMAwF0Nz/0u02QOr2k1SCWnpeBc4gvywITo9HfH09Xc93Xt99vZJfvjpl8YWBgXFbRvIQ1Xerpyz4gzAwMA5gJKFwHo7zaJk/GwYGBsbVZ67u/I7pfRIDAwNjzqiG4yRlxMDAwOgVsdWAmAflj9biGBgYN2TkXffPv37LfAMDA+NWjK/iNaEmCWLzqTAwMLZm5AEuSeny+3nqWSiMMTAwtmasCpHJSLJa+pZLVgwMjO0Yk5WISTHcC9yX38LAwNia0RsPVEebOXvBAAADA2Nrxjx1y1fH8hWN/D4GBsYJjPnaVr7UlT9WOfhiYGBsx1gb8qoFcLlAvToRAwNja8akQZa3z/LC+B1UDAyMnRjJwDIvSnuN/l4hjYGBcQKjunhaLTvnqxgREgMDY1NGPqpcmyZOBqg//DIGBsbWjGqS12uo5bAeGwMD4wRGElirqWQSRudFLAYGxjmM/Mhqyrg2QEehHwMDY1NGeYMsXrnIQ+2CxhwGBsYxjGqLv9dEy/GFDREMDIwDGHlzrXlMjM+HoxgYGCcwVhWuvYTv39XfGBgY/5IxCXZ5c7+6MJEPU8swDAyM2zLmI8bJ8DJPActdQwwMjO0YvaWK6pJEdf1rtDOCgYFxMCNpnOW86ol/VOQYGBgYcYHaq56r7bkFARcDA+NWjLzRPzmyuvhVAGNgYGzNmC9GVFtpvUfppZsYGBg3Z3wD5BK8KqXebr4AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

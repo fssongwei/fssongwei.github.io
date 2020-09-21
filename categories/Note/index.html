@@ -17,6 +17,8 @@
     <title>Categories: Note | David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <meta name="theme-color" content="#3F51B5">
+    
     
     <meta name="keywords" content>
     <meta name="description" content="Developer. Computer &amp; Information Science Graduate Student @ Cornell.">
@@ -32,7 +34,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
+    <link rel="shortcut icon" href="/img/icon.jpg">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -49,19 +51,68 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Wei Song</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:ws446@cornell.edu" title="ws446@cornell.edu" class="mail">ws446@cornell.edu</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/fssongwei" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://wei.ai" target="_blank" >
+                <i class="icon icon-lg icon-address-card"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://wei.ai/docs/CV_EN.pdf" target="_blank" >
+                <i class="icon icon-lg icon-file"></i>
+                CV
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -74,15 +125,29 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">undefined: Note</div>
+        <div class="flex-col header-title ellipsis">Categories: Note</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
 <header class="content-header categories-header">
 
     <div class="container fade-scale">
-        <h1 class="title">undefined: Note</h1>
+        <h1 class="title">Categories: Note</h1>
         <h5 class="subtitle">
             
         </h5>
@@ -95,10 +160,6 @@
             ">All</a>
         
 
-            <a href="/categories/Life/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Life</a>
-
-        
-
             <a href="/categories/Projects/" style="-webkit-order:0;order:0" class="tags-list-item waves-effect waves-button waves-light">Projects</a>
 
         
@@ -108,6 +169,10 @@
         
 
             <a href="/categories/Debug/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">Debug</a>
+
+        
+
+            <a href="/categories/Life/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Life</a>
 
         
     </nav>
@@ -270,6 +335,15 @@
         <footer class="footer">
     <div class="top">
         
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total Visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total Visits：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
 
         <p>
             
@@ -279,7 +353,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Wei Song &copy; 2020</span>
+        <p><span>Wei Song &copy; 2019 - 2020</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -293,9 +367,55 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/categories/Note/&title=David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/categories/Note/&title=David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/categories/Note/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=David's Blog&url=http://blog.david916.com/categories/Note/&via=http://blog.david916.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/categories/Note/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwUlEQVR42u3aQW6EMAwF0N7/0lOpe8K3TVJGelmhAZLHLCzbyc9PPD5/4+r66m4+58MDFxd3zP0sx5p49WT+bm7AxcU9z02C1/qX6ltJ+MPFxX0/d51vrH/PAyUuLu53cavlSi8NwsXFfQ83L2l6z/fCHC4u7n9x5w3T+fXR/i4uLu5gV6KaoFQTl/LquLi4R7hXk1abIL1WaXOzFhcXdzO3F56Sj1ynL8ndmxCGi4u7jZsvNm+R5EEzCqy4uLjbuNUCJp+6N9tNOoWLi3uEW00vqpsck3IoQuPi4m7j9tqa84Kn+Xfg4uIe4fZCWJL6VNOj0YYrLi7uQ9w8hCWI/CN7x7ZwcXHfwK2Gv+TuKAji4uIe5PZCVb5MtXy62UrBxcXdzE1qislxiirugYYpLi7umFt9ISmKqsc4kmtcXNzz3LzsSbY6kpZHr42Li4t7kltta+aHKpKSJj/MgYuLe4bb298cnfyKi6u89MLFxd3BfTZ49T4sCXy4uLjnuc8GrzIiL5BwcXFfxu01SgobqMm6uLi4X8JNEqb87o0NFxf3IHe+TFIsVT971BbBxcUdcKsN0/wAVi/1SQIcLi7uNu4vYu9sw3ciPXQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
@@ -303,9 +423,31 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 <script src="/js/main.min.js?v=1.7.2"></script>
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
