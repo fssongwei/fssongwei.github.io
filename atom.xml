@@ -66,11 +66,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -96,11 +96,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -127,11 +127,11 @@
       <category term="Debug" scheme="http://blog.david916.com/categories/Debug/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -181,11 +181,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -354,11 +354,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -443,9 +443,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -503,11 +503,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
       <category term="R" scheme="http://blog.david916.com/tags/R/"/>
     
       <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
-    
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
   </entry>
   
