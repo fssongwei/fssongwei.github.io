@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-10-07T09:50:21.431Z</updated>
+  <updated>2020-10-31T04:28:57.208Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Time Tracker - A mobile time tracking app</title>
+    <link href="http://blog.david916.com/2020/10/31/TimeTracker/"/>
+    <id>http://blog.david916.com/2020/10/31/TimeTracker/</id>
+    <published>2020-10-31T03:30:39.434Z</published>
+    <updated>2020-10-31T04:28:57.208Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Time Tracker is a app that helps you to keep track of your daily routine and stay focus. Users can timing what they have done in a day. The app will automatically store those records, lists them and analyzes them, and using different well-designed charts to display the results, so that user can have a intuitive knowledge of how much time they have been spending in a specific task, and what are the most time comsuming tasks in a day. For example, I can know if I spend too much time on playing game instead of reading books. Meanwhile, when the app is timing, user can not use the phone (or the timer will stop), which helps user to keep focus on what they are doing right now.</p><p><a href="https://github.com/fssongwei/TimeTracker" target="_blank" rel="noopener">Github</a></p><p><a href="https://expo.io/@fssongwei/projects/TimeTracker" target="_blank" rel="noopener">Expo</a></p><h2 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h2><p>The app is built on React Native with Expo. User data are stored in the AsyncStorage in local environment, and managed by redux. We choose Ant Design Mobile Native for UI library. The charts are render by react-native-chart-kit &amp; react-native-svg-charts.</p><h2 id="Functionality"><a href="#Functionality" class="headerlink" title="Functionality"></a>Functionality</h2><ol><li>Add a task recorder (or timer), and user can choose color to label it.</li><li>Timing what the user is doing right now with the specific timer.</li><li>Record and store all the timing results.</li><li>List the timing records. The records are also mark with user pre-defined color.</li><li>User can filter the records with specific date or task.</li><li>Using pie chart to show the time duration distribution of each task in a day / week / month / year.</li><li>Using contribution map (heatmap) to show the activities of recent months.</li><li>Trend function: how much more (or less) time you have spent on a task in this week compares to lask weeks.</li><li>Clear All function: user can delete all records and timer data by one click.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="https://i.loli.net/2020/10/31/9lQ3rTqs8dZWhLz.png" alt="index.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/WqHmfJp1McTECwz.png" alt="add.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/KcsMYOSUkJD3LwQ.png" alt="record.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/DXdimv6PBlxw2hj.png" alt="analysis.png" style="zoom:50%;">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Time Tracker is a app that hel
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
+      <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+      <category term="ReactNative" scheme="http://blog.david916.com/tags/ReactNative/"/>
+    
+  </entry>
   
   <entry>
     <title>Classic Bubble Breaker Game</title>
@@ -66,11 +96,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
-    
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -96,11 +126,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
-    
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -127,11 +157,11 @@
       <category term="Debug" scheme="http://blog.david916.com/categories/Debug/"/>
     
     
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
-    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -181,11 +211,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
-    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -354,11 +384,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
-    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -443,9 +473,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
-    
       <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
+      <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -503,11 +533,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="R" scheme="http://blog.david916.com/tags/R/"/>
     
       <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
   </entry>
   
@@ -553,34 +583,6 @@
       
       
         &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;iBuy is a shopping list Androi
-      
-    
-    </summary>
-    
-    
-      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
-    
-    
-      <category term="Java" scheme="http://blog.david916.com/tags/Java/"/>
-    
-      <category term="Android" scheme="http://blog.david916.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Anagram Game</title>
-    <link href="http://blog.david916.com/2017/10/11/Anagram%20Game/"/>
-    <id>http://blog.david916.com/2017/10/11/Anagram Game/</id>
-    <published>2017-10-10T16:00:00.000Z</published>
-    <updated>2017-10-10T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is the course project of CS 399 Moblie Application Development. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For example, the word anagram can be rearranged into nag a ram, or the word binary into brainy or the word adobe into abode.</p><p>This android game has 3 different difficulty levels. The game will provide a word and the player will need to enter the correct anagram in order to continue the game. The length of the word will increase with the difficulty of the game. Once the players finish all questions, the game will show a result page with info like the correct rate.</p><p><a href="https://github.com/fssongwei/Anagram" target="_blank" rel="noopener">Source Code</a></p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-10-10-Version-1-0"><a href="#2017-10-10-Version-1-0" class="headerlink" title="2017.10.10 Version 1.0"></a>2017.10.10 Version 1.0</h5><ol><li>Designed and implemented the UI of the game</li><li>Implemented the game logic and a questions library.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/20/2ve5sNAcRFpBzQ1.jpg" alt="main.jpg" title>                </div>                <div class="image-caption">main.jpg</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/20/GlQ71FdLfoxV5D9.png" alt="game.png" title>                </div>                <div class="image-caption">game.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/20/tEbrCWH4cfja8yD.png" alt="info.png" title>                </div>                <div class="image-caption">info.png</div>            </figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is the course project of 
       
     
     </summary>
