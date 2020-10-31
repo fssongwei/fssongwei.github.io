@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-10-31T04:28:57.208Z</updated>
+  <updated>2020-10-31T04:44:02.029Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://blog.david916.com/2020/10/31/TimeTracker/"/>
     <id>http://blog.david916.com/2020/10/31/TimeTracker/</id>
     <published>2020-10-31T03:30:39.434Z</published>
-    <updated>2020-10-31T04:28:57.208Z</updated>
+    <updated>2020-10-31T04:44:02.029Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Time Tracker is a app that helps you to keep track of your daily routine and stay focus. Users can timing what they have done in a day. The app will automatically store those records, lists them and analyzes them, and using different well-designed charts to display the results, so that user can have a intuitive knowledge of how much time they have been spending in a specific task, and what are the most time comsuming tasks in a day. For example, I can know if I spend too much time on playing game instead of reading books. Meanwhile, when the app is timing, user can not use the phone (or the timer will stop), which helps user to keep focus on what they are doing right now.</p><p><a href="https://github.com/fssongwei/TimeTracker" target="_blank" rel="noopener">Github</a></p><p><a href="https://expo.io/@fssongwei/projects/TimeTracker" target="_blank" rel="noopener">Expo</a></p><h2 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h2><p>The app is built on React Native with Expo. User data are stored in the AsyncStorage in local environment, and managed by redux. We choose Ant Design Mobile Native for UI library. The charts are render by react-native-chart-kit &amp; react-native-svg-charts.</p><h2 id="Functionality"><a href="#Functionality" class="headerlink" title="Functionality"></a>Functionality</h2><ol><li>Add a task recorder (or timer), and user can choose color to label it.</li><li>Timing what the user is doing right now with the specific timer.</li><li>Record and store all the timing results.</li><li>List the timing records. The records are also mark with user pre-defined color.</li><li>User can filter the records with specific date or task.</li><li>Using pie chart to show the time duration distribution of each task in a day / week / month / year.</li><li>Using contribution map (heatmap) to show the activities of recent months.</li><li>Trend function: how much more (or less) time you have spent on a task in this week compares to lask weeks.</li><li>Clear All function: user can delete all records and timer data by one click.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="https://i.loli.net/2020/10/31/9lQ3rTqs8dZWhLz.png" alt="index.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/WqHmfJp1McTECwz.png" alt="add.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/KcsMYOSUkJD3LwQ.png" alt="record.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/DXdimv6PBlxw2hj.png" alt="analysis.png" style="zoom:50%;">]]></content>
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Time Tracker is a app that helps you to keep track of your daily routine and stay focus. Users can timing what they have done in a day. The app will automatically store those records, lists them and analyzes them, and using different well-designed charts to display the results, so that user can have a intuitive knowledge of how much time they have been spending in a specific task, and what are the most time comsuming tasks in a day. For example, I can know if I spend too much time on playing game instead of reading books. Meanwhile, when the app is timing, user can not use the phone (or the timer will stop), which helps user to keep focus on what they are doing right now.</p><p><a href="https://github.com/fssongwei/TimeTracker" target="_blank" rel="noopener">Github</a></p><p><a href="https://expo.io/@fssongwei/projects/TimeTracker" target="_blank" rel="noopener">Expo</a></p><p><a href="https://timetracker.wei.ai/assets/dist/file/TimeTracker.apk" target="_blank" rel="noopener">Android APK</a></p><p><a href="https://timetracker.wei.ai" target="_blank" rel="noopener">Website</a></p><h2 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h2><p>The app is built on React Native with Expo. User data are stored in the AsyncStorage in local environment, and managed by redux. We choose Ant Design Mobile Native for UI library. The charts are render by react-native-chart-kit &amp; react-native-svg-charts.</p><h2 id="Functionality"><a href="#Functionality" class="headerlink" title="Functionality"></a>Functionality</h2><ol><li>Add a task recorder (or timer), and user can choose color to label it.</li><li>Timing what the user is doing right now with the specific timer.</li><li>Record and store all the timing results.</li><li>List the timing records. The records are also mark with user pre-defined color.</li><li>User can filter the records with specific date or task.</li><li>Using pie chart to show the time duration distribution of each task in a day / week / month / year.</li><li>Using contribution map (heatmap) to show the activities of recent months.</li><li>Trend function: how much more (or less) time you have spent on a task in this week compares to lask weeks.</li><li>Clear All function: user can delete all records and timer data by one click.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="https://i.loli.net/2020/10/31/9lQ3rTqs8dZWhLz.png" alt="index.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/WqHmfJp1McTECwz.png" alt="add.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/KcsMYOSUkJD3LwQ.png" alt="record.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/DXdimv6PBlxw2hj.png" alt="analysis.png" style="zoom:50%;">]]></content>
     
     <summary type="html">
     
@@ -473,9 +473,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -533,11 +533,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
+    
       <category term="R" scheme="http://blog.david916.com/tags/R/"/>
     
       <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
-    
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
   </entry>
   
