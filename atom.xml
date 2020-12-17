@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-10-31T04:44:02.029Z</updated>
+  <updated>2020-12-17T15:54:46.891Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -17,19 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Time Tracker - A mobile time tracking app</title>
-    <link href="http://blog.david916.com/2020/10/31/TimeTracker/"/>
-    <id>http://blog.david916.com/2020/10/31/TimeTracker/</id>
-    <published>2020-10-31T03:30:39.434Z</published>
-    <updated>2020-10-31T04:44:02.029Z</updated>
+    <title>David-Auth Documentation</title>
+    <link href="http://blog.david916.com/2020/12/17/David-Auth%20Spec/"/>
+    <id>http://blog.david916.com/2020/12/17/David-Auth Spec/</id>
+    <published>2020-12-17T15:11:30.941Z</published>
+    <updated>2020-12-17T15:54:46.891Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Time Tracker is a app that helps you to keep track of your daily routine and stay focus. Users can timing what they have done in a day. The app will automatically store those records, lists them and analyzes them, and using different well-designed charts to display the results, so that user can have a intuitive knowledge of how much time they have been spending in a specific task, and what are the most time comsuming tasks in a day. For example, I can know if I spend too much time on playing game instead of reading books. Meanwhile, when the app is timing, user can not use the phone (or the timer will stop), which helps user to keep focus on what they are doing right now.</p><p><a href="https://github.com/fssongwei/TimeTracker" target="_blank" rel="noopener">Github</a></p><p><a href="https://expo.io/@fssongwei/projects/TimeTracker" target="_blank" rel="noopener">Expo</a></p><p><a href="https://timetracker.wei.ai/assets/dist/file/TimeTracker.apk" target="_blank" rel="noopener">Android APK</a></p><p><a href="https://timetracker.wei.ai" target="_blank" rel="noopener">Website</a></p><h2 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h2><p>The app is built on React Native with Expo. User data are stored in the AsyncStorage in local environment, and managed by redux. We choose Ant Design Mobile Native for UI library. The charts are render by react-native-chart-kit &amp; react-native-svg-charts.</p><h2 id="Functionality"><a href="#Functionality" class="headerlink" title="Functionality"></a>Functionality</h2><ol><li>Add a task recorder (or timer), and user can choose color to label it.</li><li>Timing what the user is doing right now with the specific timer.</li><li>Record and store all the timing results.</li><li>List the timing records. The records are also mark with user pre-defined color.</li><li>User can filter the records with specific date or task.</li><li>Using pie chart to show the time duration distribution of each task in a day / week / month / year.</li><li>Using contribution map (heatmap) to show the activities of recent months.</li><li>Trend function: how much more (or less) time you have spent on a task in this week compares to lask weeks.</li><li>Clear All function: user can delete all records and timer data by one click.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="https://i.loli.net/2020/10/31/9lQ3rTqs8dZWhLz.png" alt="index.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/WqHmfJp1McTECwz.png" alt="add.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/KcsMYOSUkJD3LwQ.png" alt="record.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/DXdimv6PBlxw2hj.png" alt="analysis.png" style="zoom:50%;">]]></content>
+    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>David-Auth is a SSO login system, which allow the apps under the domain <code>.wei.ai</code> to verify the user identity throw Json Web Token (JWT). The system currently support login ways through email / password, and Google / Facebook OAuth 2.0.</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/12/17/K9ANYMU2mVeioSj.png" alt="David-Auth.png" title>                </div>                <div class="image-caption">David-Auth.png</div>            </figure><p><a href="https://test.wei.ai/" target="_blank" rel="noopener">Demo</a></p><p><a href="https://github.com/fssongwei/David-Auth" target="_blank" rel="noopener">Github</a></p><h3 id="Link-To-Login-Panel"><a href="#Link-To-Login-Panel" class="headerlink" title="Link To Login Panel"></a>Link To Login Panel</h3><p>To utilize the David-Auth, the app can set their login link direct to the David-Auth login system on <code>https://auth.wei.ai</code>. A url query string with parameter <code>origin</code> is required (it tells the auth server to redirect back to your app after authorization process finished, otherwise the login panel will show a error message). For example, if your app is running on <code>https://myapp.wei.ai</code>，simply construct the following link: </p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://auth.wei.ai/?origin=https://myapp.wei.ai"</span>&gt;</span>Login<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="App-Backend-Configuration"><a href="#App-Backend-Configuration" class="headerlink" title="App Backend Configuration"></a>App Backend Configuration</h3><p>After users finish their authorization process, the auth server will issue a JWT token stored in the cookie (which the domain has configured as <code>.wei.ai</code>). The JWT contains the following user data:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">name: String,</span><br><span class="line">  avatar: String,</span><br><span class="line">  googleUserId: String,</span><br><span class="line">  facebookUserId: String,</span><br><span class="line">email: string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Detail user infomation data can also be accessed through <code>https://auth.wei.ai/user</code> (JWT Cookie Required)</p><p>The JWT cookie is now set to client browser and will be sent to the app backend server for every request. The app server can extract the JWT from the request cookie header and then verify.</p><p>The JWT issued by the auth server is signed and encrypt by the RSA key. The public key is provided below and can be used to verify if JWT is real:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN PUBLIC KEY-----</span><br><span class="line">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4Dppu06ECcPsnsr4/nnrRjscF</span><br><span class="line">QuqdeFd2fwYzzvP4pQSt41p0/Dl0kSuqN56eGBKsW8/l3bWdAsLAVLPBSRvWjaor</span><br><span class="line">A0ff0dteK9/RUGIKNLeq39LxV3p8wGnezA9mmY5I2o8HcQxR2jVPbzFGZYEMbmiB</span><br><span class="line">gSDJp94pgfhExoyILQIDAQAB</span><br><span class="line">-----END PUBLIC KEY-----</span><br></pre></td></tr></table></figure><p>(You can save the public key into a <code>pub.key</code> file)</p><p>The following example shows the JWT authentication process of a Express App using Passport.js and <code>passport-jwt</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// passportConfig.js</span></span><br><span class="line"><span class="keyword">const</span> passport = <span class="built_in">require</span>(<span class="string">"passport"</span>);</span><br><span class="line"><span class="keyword">const</span> JwtStrategy = <span class="built_in">require</span>(<span class="string">"passport-jwt"</span>).Strategy;</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> opts = &#123;&#125;;</span><br><span class="line"><span class="comment">// Extract JWT from cookie</span></span><br><span class="line">opts.jwtFromRequest = <span class="function"><span class="keyword">function</span> (<span class="params">req</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">var</span> token = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">if</span> (req &amp;&amp; req.cookies) &#123;</span><br><span class="line">    token = req.cookies[<span class="string">"jwt"</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> token;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// using the public key to verify JWT</span></span><br><span class="line"><span class="keyword">let</span> pubKey = fs.readFileSync(<span class="string">"./keys/pub.key"</span>);</span><br><span class="line">opts.secretOrKey = pubKey;</span><br><span class="line"></span><br><span class="line">passport.use(</span><br><span class="line">  <span class="keyword">new</span> JwtStrategy(opts, (jwt_payload, done) =&gt; &#123;</span><br><span class="line">    <span class="comment">// append the jwt payload data to req.user</span></span><br><span class="line">    done(<span class="literal">null</span>, jwt_payload.data);</span><br><span class="line">  &#125;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">"cookie-parser"</span>);</span><br><span class="line">app.use(cookieParser());</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"./passportConfig"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ... other config &amp; middlewares</span></span><br><span class="line"></span><br><span class="line">router.get(</span><br><span class="line">  <span class="string">"/someSerectRequest"</span>,</span><br><span class="line">  <span class="comment">// use passport.js JWT middlewares to process authentication</span></span><br><span class="line">  passport.authenticate(<span class="string">"jwt"</span>, &#123; <span class="attr">session</span>: <span class="literal">false</span> &#125;),</span><br><span class="line">  (req, res) =&gt; &#123;</span><br><span class="line">    <span class="comment">// user is authenticated, process the request</span></span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Time Tracker is a app that hel
+        &lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;David-Auth is a SSO login syst
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Web" scheme="http://blog.david916.com/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Time Tracker - A mobile time tracking app</title>
+    <link href="http://blog.david916.com/2020/10/31/TimeTracker/"/>
+    <id>http://blog.david916.com/2020/10/31/TimeTracker/</id>
+    <published>2020-10-31T03:30:39.434Z</published>
+    <updated>2020-11-05T14:04:58.866Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Time Tracker is an app that helps you to keep track of your daily routine and stay focus. Users can time what they have done in a day. The app will automatically store those records, lists them and analyzes them, and using different well-designed charts to display the results, so that user can have an intuitive knowledge of how much time they have been spending in a specific task, and what are the most time-consuming tasks in a day. For example, I can know if I spend too much time playing games instead of reading books. Meanwhile, when the app is timing, the user can not use the phone (or the timer will stop), which helps users to focus on what they are doing right now.</p><p><a href="https://github.com/fssongwei/TimeTracker" target="_blank" rel="noopener">Github</a></p><p><a href="https://expo.io/@fssongwei/projects/TimeTracker" target="_blank" rel="noopener">Expo</a></p><p><a href="https://timetracker.wei.ai/assets/dist/file/TimeTracker.apk" target="_blank" rel="noopener">Android APK</a></p><p><a href="https://timetracker.wei.ai" target="_blank" rel="noopener">Website</a></p><h2 id="Technologies"><a href="#Technologies" class="headerlink" title="Technologies"></a>Technologies</h2><p>The app is built on React Native with Expo. User data are stored in the AsyncStorage in the local environment, and managed by redux. We choose Ant Design Mobile Native for the UI library. The charts are render by react-native-chart-kit &amp; react-native-svg-charts.</p><h2 id="Functionality"><a href="#Functionality" class="headerlink" title="Functionality"></a>Functionality</h2><ol><li>Add a task recorder (or timer), and user can choose color to label it.</li><li>Timing what the user is doing right now with the specific timer.</li><li>Record and store all the timing results.</li><li>List the timing records. The records are also mark with user pre-defined color.</li><li>User can filter the records with specific date or task.</li><li>Using pie chart to show the time duration distribution of each task in a day / week / month / year.</li><li>Using contribution map (heatmap) to show the activities of recent months.</li><li>Trend function: how much more (or less) time you have spent on a task in this week compares to lask weeks.</li><li>Clear All function: user can delete all records and timer data by one click.</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="https://i.loli.net/2020/10/31/9lQ3rTqs8dZWhLz.png" alt="index.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/WqHmfJp1McTECwz.png" alt="add.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/KcsMYOSUkJD3LwQ.png" alt="record.png" style="zoom:50%;"><img src="https://i.loli.net/2020/10/31/DXdimv6PBlxw2hj.png" alt="analysis.png" style="zoom:50%;">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Time Tracker is an app that he
       
     
     </summary>
@@ -96,11 +122,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -126,11 +152,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -157,11 +183,11 @@
       <category term="Debug" scheme="http://blog.david916.com/categories/Debug/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -211,11 +237,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -384,11 +410,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -555,34 +581,6 @@
       
       
         &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is the course project of 
-      
-    
-    </summary>
-    
-    
-      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
-    
-    
-      <category term="Java" scheme="http://blog.david916.com/tags/Java/"/>
-    
-      <category term="Android" scheme="http://blog.david916.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iBuy - A Shopping List Android App</title>
-    <link href="http://blog.david916.com/2017/11/15/iBuy%20Shopping%20List%20Android%20App/"/>
-    <id>http://blog.david916.com/2017/11/15/iBuy Shopping List Android App/</id>
-    <published>2017-11-14T16:00:00.000Z</published>
-    <updated>2017-11-14T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>iBuy is a shopping list Android application. It allows users to list the items they want to buy, marked the price, amount and urgent level of each item, and share your shopping list within a group (family, friend, etc). </p><p>A household goes through tons of “consumables”: food, toilet paper, laundry detergent, you name it. It is a huge challenge for households to track and manage these daily needs. Though various household members are moving around the city all day — and could potentially make efficient on-the-way purchases — in reality, no one knows or can remember what needs to be purchased and who is supposed to purchase it. Which means wasted time, extra trips to the store for one item, and general frustration about eating dry cereal, washing your hair with facial soap, and wiping your bottom with paper towels. We’ve all been there. Or worse yet, multiple people remember to buy and you end up with 400 rolls of toilet paper. iBuy will solve this problem forever.</p><p><a href="https://github.com/fssongwei/iBuy" target="_blank" rel="noopener">Source Code</a></p><h2 id="Updates"><a href="#Updates" class="headerlink" title="Updates"></a>Updates</h2><h5 id="2017-11-15-Version-1-0"><a href="#2017-11-15-Version-1-0" class="headerlink" title="2017.11.15 Version 1.0"></a>2017.11.15 Version 1.0</h5><ol><li>Final product delievery</li></ol><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><img src="https://i.loli.net/2020/07/21/uaYTs1GRyHbc4hE.png" alt="login.png"> </p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/GUT2Vc8MprO9Whf.png" alt="Register.png" title>                </div>                <div class="image-caption">Register.png</div>            </figure> <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/61MHuNy4v3BwzLW.png" alt="AddItem1.png" title>                </div>                <div class="image-caption">AddItem1.png</div>            </figure> <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/HAIklyimXbUREqg.png" alt="AddItem2.png" title>                </div>                <div class="image-caption">AddItem2.png</div>            </figure> <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/UsiwOx9NzDBnTER.png" alt="ShoppingList.png" title>                </div>                <div class="image-caption">ShoppingList.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/sXmIvBleu7pyiOc.png" alt="Account.png" title>                </div>                <div class="image-caption">Account.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/xMPl8D3CGLZWKX5.png" alt="Group.png" title>                </div>                <div class="image-caption">Group.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2020/07/21/i52YVR1Nw7B6WQd.png" alt="Copyright.png" title>                </div>                <div class="image-caption">Copyright.png</div>            </figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;iBuy is a shopping list Androi
       
     
     </summary>
