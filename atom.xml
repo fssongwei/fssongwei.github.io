@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-12-24T06:25:08.252Z</updated>
+  <updated>2020-12-24T10:13:14.458Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Virtual DOM和Diff算法总结</title>
+    <link href="http://blog.david916.com/2020/12/24/Virtual%20DOM%E5%92%8CDiff%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://blog.david916.com/2020/12/24/Virtual DOM和Diff算法总结/</id>
+    <published>2020-12-24T10:11:26.960Z</published>
+    <updated>2020-12-24T10:13:14.458Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a>Virtual DOM</h3><img src="https://lsqimg-1257917459.cos-website.ap-beijing.myqcloud.com/blog/虚拟dom.png" alt="Virtual DOM" style="zoom:50%;"><p>App（JS程序）可以通过DOM操作创建或更改DOM元素，DOM元素也可以通过监听并触发事件来影响JS</p><p>然而对于对于用js写的每个组件，我们需要自行<strong>手动</strong>去完成DOM更新和事件处理，效率低下</p><p>（e.g. 我用js写了一个复杂的大组件，现在想改其中一个小部分（子组件），我可以：1. 直接覆盖DOM树上整个大组件的节点，不需要引入额外代码，但DOM操作复杂性能低，或2. 通过一系列DOM查找，找到要修改的子组件所在的DOM节点，然后覆盖这个小节点，但是需要手动引入大量额外操作或代码）</p><p>React为解决上述问题引入了Virtual Dom：</p><ol><li>js创建组件后通过<code>React.createElement</code>函数生成虚拟DOM树，然后通过Virtual DOM来创建或更改真实的DOM树</li><li>DOM触发的事件会先冒泡至Virtual DOM，再由Virtual DOM转发到具体的js组件或函数去处理事件</li></ol><h4 id="Virtual-Dom优势"><a href="#Virtual-Dom优势" class="headerlink" title="Virtual Dom优势"></a>Virtual Dom优势</h4><ol><li><p>我们只需建立js组件并维护其状态，Virtual DOM会自动完成DOM更新和事件处理，从而<strong>提升开发效率</strong></p></li><li><p>Virtual DOM通过<strong>Diff算法</strong>来比较新旧Virtual DOM树，从而得出最高效的DOM更新和操作步骤，因而<strong>提升性能</strong></p><p>（实际上Virtual DOM最终还是要进行实际的DOM操作，因而不会直接提升DOM操作的性能）</p></li><li><p>不同平台可以根据Virtual DOM画出对应平台的UI层（e.g. react-native），从而实现了<strong>跨平台能力</strong></p></li></ol><h4 id="Virtual-DOM节点对象属性"><a href="#Virtual-DOM节点对象属性" class="headerlink" title="Virtual DOM节点对象属性"></a>Virtual DOM节点对象属性</h4><ol><li>type：组件类型：原生HTML元素（div, span）/ Function Component / Class Component</li><li>key：组件的唯一标识（用于Diff算法）</li><li>ref：指向原生的DOM节点</li><li>props：传入组件的props（注意children也是props的一个属性，即子组件由此访问）</li><li>owner：父组件的Virtual DOM节点</li></ol><h4 id="Virtual-DOM事件处理"><a href="#Virtual-DOM事件处理" class="headerlink" title="Virtual DOM事件处理"></a>Virtual DOM事件处理</h4><ol><li><p>react所有组件的事件（非原生事件，以下称react事件）都是挂载在document上</p></li><li><p>直到事件触发后冒泡至document后，react才开始执行react事件</p></li><li><p>执行顺序：非挂载在document上的原生事件 =&gt; react事件 =&gt; 挂载在document上的原生事件</p><p>（不建议混用react事件和原生事件） <a href="https://juejin.cn/post/6844903790198571021#heading-4" target="_blank" rel="noopener">ref</a></p></li></ol><h3 id="Diff算法"><a href="#Diff算法" class="headerlink" title="Diff算法"></a>Diff算法</h3><p>归纳三点（如果不想看后续详细介绍）：</p><ol><li>同级节点（具有相同父节点的子节点）为一组进行比较（tree diff）</li><li>节点间通过比较节点类型进行快速判断（component diff）</li><li>使用key对于同组节点进行比较和移动操作，避免重复删除和重建节点（element diff）</li></ol><p>Virtual DOM带来的性能提升主要源于React实现的高效Diff算法。Diff算法主要用于计算从一颗树变换到另一个树所需要的最少操作次数（添加/删除/移动节点）。</p><p>传统Diff算法平均复杂度为n^3，react引入的改进版Diff算法平均复杂度降至n</p><p>用户触发的事件均可能造成DOM树的变动，主要分为以下几种：</p><ol><li>同一层级（具有相同父节点的兄弟节点）的DOM节点之间的变动：e.g. 新增/插入/删除/随机排序列表项</li><li>一个DOM节点影响另一个DOM节点（例如redux状态共享，父子节点通过props/callback状态共享）</li><li>DOM节点间的跨层级移动（例如同级的AB节点，A节点移动至B的子节点）（此种情况出现次数极少，忽略不计）</li></ol><p>基于上述变动方式，React设计了如下步骤用于计算如何变换DOM树：</p><ol><li><p>tree diff</p><p>由于DOM节点间的跨层级移动出现极少，因此可以完全忽略此种情况，比较两颗树时只对同一层次对应的节点进行比较</p><p><img src="https://pic1.zhimg.com/80/0c08dbb6b1e0745780de4d208ad51d34_720w.png" alt="tree diff"></p><p>（如上图：根节点和根节点比较，同一层次具有相同父节点的节点为一组进行比较）</p><p><img src="https://pic2.zhimg.com/80/d712a73769688afe1ef1a055391d99ed_720w.png" alt="tree diff 2"></p><p>而对于跨层级移动的节点（上图A），则会经历一次节点销毁和节点重建的过程，效率较低。但由于此种情况出现极少，整体而言react diff算法效率还是较高</p></li><li><p>component diff</p><p>上面tree diff进行同级比较时，需要判断两个节点是否相同，如果不同则会被替换或销毁</p><p>react判断节点（以及其子节点）是否相同，不会通过递归的方式一一比较子节点，而是直接通过判断两个节点的类型（class，即组件名）是否相同，对于不同的节点进行操作</p><p>（react官方的解答是，对于不同类型的组件节点，存在相同DOM树的概率极低，因而不用浪费时间在后续比较）</p><p>对于类型相同的节点，则继续递归其子节点进行判断，但是react也允许用户使用<code>shouldComponentUpdate()</code> 来判断是否需要对该节点进行后续<code>diff</code>运算，从而提高效率</p></li><li><p>element diff</p><p>对于同一层级（具有相同父节点的）节点的新增/插入/删除/乱序等操作，传统的diff算法会按顺序一一通过component diff进行比较，对不同的节点进行删除/重建/替换操作，效率较低：</p><p><img src="https://pic2.zhimg.com/80/7541670c089b84c59b84e9438e92a8e9_720w.png" alt="element diff 1"></p><p>(e.g. 当上面节点顺序由ABCD改为BADC时，传统Diff算法流程：删除A，重建B，插入B，删除B，重建A，插入A，删除C，重建D，插入D，删除D，重建C，插入C共12步，即每个节点都需要删除再重建，尤其重建的效率非常低)</p><p>实际上针对上述情况，只需要进行两部移动（将A移动到B后面，将D移动到C后面）即可完成，这也是react element diff算法给出的操作结果：</p><ol><li><p>每个同级节点具有独特的key</p></li><li><p>遍历每个新Virtual DOM的节点（索引记为i），如果旧Virtual DOM树同一层级具有相同的节点（需要结合key和component diff判断是否相同），且该节点当前所在索引 i 在其旧索引位置的前面，则将该节点从真实DOM树上<strong>往后移动</strong></p><p>（即仅对存在的节点向后移动，而不对节点向前移动）</p><p>（e.g. 上面A节点在新树的索引为1，旧树的索引为0，则将A在DOM树上往后移）</p><p>对于不存在于旧DOM的新节点则直接插入到DOM树中，对于不存在于新DOM的旧节点则直接删除</p></li></ol><p>Example:</p><p><img src="https://pic4.zhimg.com/80/c0aa97d996de5e7f1069e97ca3accfeb_720w.png" alt="example1"></p><p>(ABCD节点均在旧DOM树中，b节点新旧索引（0&lt;1）不动，a节点（1&gt;0）往后移动，依次类推)</p><p><img src="https://pic1.zhimg.com/80/7b9beae0cf0a5bc8c2e82d00c43d1c90_720w.png" alt="example2"></p><p>(B节点不动，E节点新增，C节点不冬，A节点后移，D节点删除)</p><p><img src="https://pic2.zhimg.com/80/1b8dac5b9b3e4452dec8d5447d7717ad_720w.png" alt="example3"></p><p>（ABC节点均后移，D节点不动。由于Diff算法只对节点进行后移，因此尽量减少类似将最后一个节点移动到列表首部的操作）</p></li></ol><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="http://www.conardli.top/blog/article/React深入系列/深入分析虚拟DOM的渲染原理和特性.html" target="_blank" rel="noopener">深入分析虚拟DOM的渲染原理和特性</a></p><p><a href="https://zhuanlan.zhihu.com/p/20346379" target="_blank" rel="noopener">React 源码剖析系列 － 不可思议的 react diff</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Virtual-DOM&quot;&gt;&lt;a href=&quot;#Virtual-DOM&quot; class=&quot;headerlink&quot; title=&quot;Virtual DOM&quot;&gt;&lt;/a&gt;Virtual DOM&lt;/h3&gt;&lt;img src=&quot;https://lsqimg-1257917459.c
+      
+    
+    </summary>
+    
+    
+      <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
+    
+    
+      <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>OAuth 2.0 安全性总结</title>
@@ -148,11 +174,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -178,11 +204,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
-      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
       <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
       <category term="React" scheme="http://blog.david916.com/tags/React/"/>
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
     
   </entry>
   
@@ -209,11 +235,11 @@
       <category term="Debug" scheme="http://blog.david916.com/categories/Debug/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -263,11 +289,11 @@
       <category term="Note" scheme="http://blog.david916.com/categories/Note/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -436,11 +462,11 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
       <category term="Nodejs" scheme="http://blog.david916.com/tags/Nodejs/"/>
     
       <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
-    
-      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
     
   </entry>
   
@@ -525,9 +551,9 @@
       <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
     
     
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
       <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
+    
+      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
       <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
@@ -560,36 +586,6 @@
       <category term="Python" scheme="http://blog.david916.com/tags/Python/"/>
     
       <category term="AWS" scheme="http://blog.david916.com/tags/AWS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Predictions and Countermeasures for the Opioid Crisis with Socio-Economic Factors</title>
-    <link href="http://blog.david916.com/2019/01/29/Predictions%20and%20Countermeasures%20for%20the%20Opioid%20Crisis%20with%20Socio-Economic%20Factors/"/>
-    <id>http://blog.david916.com/2019/01/29/Predictions and Countermeasures for the Opioid Crisis with Socio-Economic Factors/</id>
-    <published>2019-01-28T16:00:00.000Z</published>
-    <updated>2019-01-28T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>This project is for the 35th annual Mathematical Contest in Modeling, which won the Honorable Mention amount 16% of the 14,108 participant teams.</p><p><a href="https://storage.googleapis.com/www.david916.com/projects/report.pdf" target="_blank" rel="noopener">Full Final Report</a><br><a href="https://github.com/fssongwei/2019-MCM" target="_blank" rel="noopener">Source Code</a><br><a href="https://storage.googleapis.com/www.david916.com/projects/certificate.pdf" target="_blank" rel="noopener">Certificate</a></p><p>In this project, we developed a set of data analyses to determine the opioids source-locations in Ohio, Pennsylvania, Virginia, West Virginia, and Kentucky, to predict the opioids con- sumption trends in years up to 2027, to determine the strongest socio-economic factors that influenced the opioids consumptions trends, and to propose a countermeasure that would possibly ease the Opioid Crisis.</p><p>First, we processed the data from the drug identification counts by eliminating redun- dant data and by filling the missing data. We chose data values under “Percent” for our future models, because they are the most representative in analyzing opioids consump- tion. We filled the missing data by applying the curve fitting and cubic spline methods to data missing between 20%-50% and under 20%, respectively.</p><p>Second, with our processed data, we analyzed the locations of the most probable opioid source by utilizing the Bayesian Networks with distance as the determining factor. Graphs representing the locations of several sources are plotted. We then proceed to predict the trends of the top four opioids consumption amount and percentage with Grey Box model. We give a detailed and concise analysis of the opioids types trend.</p><p>Third, we took account of the impact of major socio-economic factors in opioid con- sumption by increasing efficiency with Principal Component Analysis and by upgrading the previous Grey Box prediction with Vector Autoregression (VAR). VAR allowed us to take account of the socio-economic factors along with the data in opioids consumption in 2010-2017.</p><p>Last, we proposed that disability is a major factor in determining the opioid con- sumption trend. We performed the VAR with a decreasing factor of 1% each year and observed positive result confirming our proposal.</p><p>In conclusion, we suggest funding for institutions with opioids rehabilitation as a countering measure against the opioid crisis. We also discussed about the significant parameters that bounds the success and failures of our models, as well as the strengths and weaknesses of our models.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;p&gt;This project is for the 35th annual Mathematical C
-      
-    
-    </summary>
-    
-    
-      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
-    
-    
-      <category term="R" scheme="http://blog.david916.com/tags/R/"/>
-    
-      <category term="Data Science" scheme="http://blog.david916.com/tags/Data-Science/"/>
-    
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
     
   </entry>
   
