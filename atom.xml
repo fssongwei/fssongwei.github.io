@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.david916.com/"/>
-  <updated>2020-12-30T13:21:09.635Z</updated>
+  <updated>2021-02-08T09:35:35.216Z</updated>
   <id>http://blog.david916.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Image图床App</title>
+    <link href="http://blog.david916.com/2021/02/08/ImageApp/"/>
+    <id>http://blog.david916.com/2021/02/08/ImageApp/</id>
+    <published>2021-02-08T09:30:02.010Z</published>
+    <updated>2021-02-08T09:35:35.216Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个图床app，前端用vue编写，后端通过multer存储图片</p><p>主要是想学一下vue，没写样式，界面有点丑，后续改进</p><p><a href="https://image.wei.ai" target="_blank" rel="noopener">Demo</a></p><p><a href="https://github.com/fssongwei/image" target="_blank" rel="noopener">Front-end</a></p><p><a href="https://github.com/fssongwei/Image-API" target="_blank" rel="noopener">Back-end</a></p><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://medium.com/binarcode/deploying-vue-apps-to-heroku-the-right-way-26b11c1ae5cd" target="_blank" rel="noopener">Deploying Vue on Heroku</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一个图床app，前端用vue编写，后端通过multer存储图片&lt;/p&gt;
+&lt;p&gt;主要是想学一下vue，没写样式，界面有点丑，后续改进&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://image.wei.ai&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;De
+      
+    
+    </summary>
+    
+    
+      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
+    
+    
+      <category term="Express" scheme="http://blog.david916.com/tags/Express/"/>
+    
+      <category term="Javascript" scheme="http://blog.david916.com/tags/Javascript/"/>
+    
+      <category term="Vue" scheme="http://blog.david916.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Flashcard - A Note App with Markdown Editor Built-in</title>
@@ -556,36 +588,6 @@
       <category term="Note" scheme="http://blog.david916.com/tags/Note/"/>
     
       <category term="Algorithm" scheme="http://blog.david916.com/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GPU Accelerated Similarity Self-join</title>
-    <link href="http://blog.david916.com/2019/12/20/GPU%20Accelerated%20Similarity%20Self-join/"/>
-    <id>http://blog.david916.com/2019/12/20/GPU Accelerated Similarity Self-join/</id>
-    <published>2019-12-19T16:00:00.000Z</published>
-    <updated>2019-12-19T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The similarity self-join is an operation that finds all objects in a dataset within a distance threshold of each other. A typical method for the self-join is to utilize the search-and-refine strategy: search a set of candidate points that may be within the search radius for every query point, and then refine them by performing the distance calculations. Numerous searches for points within the search distance take advantage of the GPU’s high memory bandwidth and massive parallelism. Thus, the GPU’s architecture is suitable for massively parallel range queries and join operations.</p><h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><p>There are many ways for points indexing, divided into two categories: Tree-based indexes (such as R-trees, quad-trees and kd-trees), and non-hierarchical indexes (such as Grids, see Figure 1). Due to the GPU’s SIMT architecture, tree indexes cause divergence in workload among the groups of threads in GPU call warp, so the total performance is depend on the threads in a warp that needs the longest time. On the other hands, each thread performs similar execution pathways in Grid structure. However, we may still have various number of points in different cells in a grid, which is also not very efficient in SIMT architecture.</p><div style="width: 50%; margin: auto"><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/20/nPJtpXEuKz3ABdO.png" alt="Figure 1" title>                </div>                <div class="image-caption">Figure 1</div>            </figure></div>(Figure 1: An example of grid indexing structure in 2D. We want to find all the points that are within ε with point p (the point in the circle area). In order to do that, we use the grid index structure so every point are within a grid cell. Then we  search all the points in the cells adjacents to the cell that contains p (nine cells in the large square bounded by the dash line) to limit the search area. After we find all the points, we verify each point by performing distance calculations (in here we use Euclidean metric), to see if the point are within the circle)<p>Our goal is to minimize the divergence of workload among each threads. To achieve that, we utilize the grid structure, improve it and develop another two grid-base indexing methods. We also extract the feature of datasets to determin which grid indexes we should use, in order to maximize the performance. We have run experiments on differents datasets, synthetic or real-world, and our method generally has better performance, with up to 20x speedup compare to a CPU implementation and up to 5.5x speedup compare to another state-of-art GPU implementation (See Figure 2).</p><div style="width: 50%; margin: auto"><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/12/20/YaqAsM9QzmDoEtN.jpg" alt="Figure 2" title>                </div>                <div class="image-caption">Figure 2</div>            </figure></div>(Figure 2: (a) compared with another CPU self-join implementation call SuperEgo and (b) compare to another GPU self-join implementation call GPUCalcGlobal. Datasets are from 2D to 8D. The red lines show the average speedup 6.0x and 2.0x, and the black dash line shows where our approach achieves a speedup (or slowdown)).<p>We are currently improving our optimization methods and drafting the related outcomes. To be continued …</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;The similarity self-join is an
-      
-    
-    </summary>
-    
-    
-      <category term="Projects" scheme="http://blog.david916.com/categories/Projects/"/>
-    
-    
-      <category term="GPU" scheme="http://blog.david916.com/tags/GPU/"/>
-    
-      <category term="Research" scheme="http://blog.david916.com/tags/Research/"/>
-    
-      <category term="Parallel Computing" scheme="http://blog.david916.com/tags/Parallel-Computing/"/>
     
   </entry>
   
