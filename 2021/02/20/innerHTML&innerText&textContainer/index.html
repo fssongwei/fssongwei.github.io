@@ -14,25 +14,28 @@
     
     
     
-    <title>Image图床App | David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
+    <title>innerHTML, innerText和textContent比较 | David&#39;s Blog | Eat, Sleep, Code, Repeat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Express,Javascript,Vue">
-    <meta name="description" content="一个图床app，前端用vue编写，后端通过multer存储图片 主要是想学一下vue，没写样式，界面有点丑，后续改进 Demo Front-end Back-end ReferenceDeploying Vue on Heroku">
-<meta name="keywords" content="Express,Javascript,Vue">
+    <meta name="keywords" content="Javascript">
+    <meta name="description" content="jsp嵌入的md文本是经过html encode的，因此md文本内的html标签不会被解析 以下一段在div内的md文本（HTML encoded） 1234567891011&amp;lt;div id=&quot;container&quot;&amp;gt;# h1 title## h2 title### h3 title&amp;amp;lt;code&amp;amp;gt;      console.log(&quot;Hello World!&quot;)">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Image图床App">
-<meta property="og:url" content="http://blog.david916.com/2021/02/08/ImageApp/index.html">
+<meta property="og:title" content="innerHTML, innerText和textContent比较">
+<meta property="og:url" content="http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/index.html">
 <meta property="og:site_name" content="David&#39;s Blog">
-<meta property="og:description" content="一个图床app，前端用vue编写，后端通过multer存储图片 主要是想学一下vue，没写样式，界面有点丑，后续改进 Demo Front-end Back-end ReferenceDeploying Vue on Heroku">
+<meta property="og:description" content="jsp嵌入的md文本是经过html encode的，因此md文本内的html标签不会被解析 以下一段在div内的md文本（HTML encoded） 1234567891011&amp;lt;div id=&quot;container&quot;&amp;gt;# h1 title## h2 title### h3 title&amp;amp;lt;code&amp;amp;gt;      console.log(&quot;Hello World!&quot;)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-02-08T09:35:35.216Z">
+<meta property="og:image" content="https://i.loli.net/2021/02/20/KpwqVQIRogaF1Pk.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/20/duoOE1hsnYJtka9.png">
+<meta property="og:updated_time" content="2021-02-20T02:37:43.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Image图床App">
-<meta name="twitter:description" content="一个图床app，前端用vue编写，后端通过multer存储图片 主要是想学一下vue，没写样式，界面有点丑，后续改进 Demo Front-end Back-end ReferenceDeploying Vue on Heroku">
+<meta name="twitter:title" content="innerHTML, innerText和textContent比较">
+<meta name="twitter:description" content="jsp嵌入的md文本是经过html encode的，因此md文本内的html标签不会被解析 以下一段在div内的md文本（HTML encoded） 1234567891011&amp;lt;div id=&quot;container&quot;&amp;gt;# h1 title## h2 title### h3 title&amp;amp;lt;code&amp;amp;gt;      console.log(&quot;Hello World!&quot;)">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/20/KpwqVQIRogaF1Pk.png">
     
         <link rel="alternate" type="application/atom+xml" title="David&#39;s Blog" href="/atom.xml">
     
@@ -127,7 +130,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Image图床App</div>
+        <div class="flex-col header-title ellipsis">innerHTML, innerText和textContent比较</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,15 +152,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Image图床App</h1>
+        <h1 class="title">innerHTML, innerText和textContent比较</h1>
         <h5 class="subtitle">
             
-                <time datetime="2021-02-08T09:30:02.010Z" itemprop="datePublished" class="page-time">
-  2021-02-08
+                <time datetime="2021-02-20T02:34:59.211Z" itemprop="datePublished" class="page-time">
+  2021-02-20
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Projects/">Projects</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Note/">Note</a></li></ul>
 
             
         </h5>
@@ -171,24 +174,17 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">1.</span> <span class="post-toc-text">Reference</span></a></li></ol>
-        </nav>
-    </aside>
 
-
-<article id="post-ImageApp"
+<article id="post-innerHTML&amp;innerText&amp;textContainer"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Image图床App</h1>
+        <h1 class="post-card-title">innerHTML, innerText和textContent比较</h1>
         <div class="post-meta">
-            <time class="post-time" title="2021-02-08 17:30:02" datetime="2021-02-08T09:30:02.010Z"  itemprop="datePublished">2021-02-08</time>
+            <time class="post-time" title="2021-02-20 10:34:59" datetime="2021-02-20T02:34:59.211Z"  itemprop="datePublished">2021-02-20</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Projects/">Projects</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Note/">Note</a></li></ul>
 
 
 
@@ -200,12 +196,45 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>一个图床app，前端用vue编写，后端通过multer存储图片</p>
-<p>主要是想学一下vue，没写样式，界面有点丑，后续改进</p>
-<p><a href="https://image.wei.ai" target="_blank" rel="noopener">Demo</a></p>
-<p><a href="https://github.com/fssongwei/image" target="_blank" rel="noopener">Front-end</a></p>
-<p><a href="https://github.com/fssongwei/Image-API" target="_blank" rel="noopener">Back-end</a></p>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://medium.com/binarcode/deploying-vue-apps-to-heroku-the-right-way-26b11c1ae5cd" target="_blank" rel="noopener">Deploying Vue on Heroku</a></p>
+            <p>jsp嵌入的md文本是经过html encode的，因此md文本内的html标签不会被解析</p>
+<p>以下一段在div内的md文本（HTML encoded）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line"># h1 title</span><br><span class="line">## h2 title</span><br><span class="line">### h3 title</span><br><span class="line"></span><br><span class="line">&amp;lt;code&amp;gt;</span><br><span class="line">      console.log("Hello World!");</span><br><span class="line">&amp;lt;/code&amp;gt;</span><br><span class="line"></span><br><span class="line">- ![image](https://some_image_url)</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中，内部的<code>&lt;code&gt;</code>标签不会被解析，同时不保留换行符：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2021/02/20/KpwqVQIRogaF1Pk.png" alt="browser.png" title>
+                </div>
+                <div class="image-caption">browser.png</div>
+            </figure>
+
+<p>分别使用innerHTML，innerText和textContent提取id为container的div元素内部的md文本</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2021/02/20/duoOE1hsnYJtka9.png" alt="compare.png" title>
+                </div>
+                <div class="image-caption">compare.png</div>
+            </figure>
+
+
+
+<ol>
+<li>innerHTML提取的文本保留换行和转义字符</li>
+<li>innerText提取的文本不保留换行，且进行了html decode</li>
+<li>textContent提取的文本保留换行，且进行了html decode</li>
+</ol>
+<p>根据具体业务场景进行选择（当前选择3）</p>
+<p>补充：</p>
+<ol>
+<li><p>innerText是IE遗留属性，不建议使用</p>
+</li>
+<li><p>innerText和textContent都会将文本进行decode，因此可以用于解码：</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">htmlDecode</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> temp = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">  temp.innerHTML = text;</span><br><span class="line">  <span class="keyword">var</span> output = temp.innerText || temp.textContent;</span><br><span class="line">  temp = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -214,12 +243,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2021-02-08T09:35:35.216Z" itemprop="dateUpdated">2021-02-08 17:35:35</time>
+    Last updated: <time datetime="2021-02-20T02:37:43.394Z" itemprop="dateUpdated">2021-02-20 10:37:43</time>
 </span><br>
 
 
         
-        Ref link：<a href="/2021/02/08/ImageApp/" target="_blank" rel="external">http://blog.david916.com/2021/02/08/ImageApp/</a>
+        Ref link：<a href="/2021/02/20/innerHTML&amp;innerText&amp;textContainer/" target="_blank" rel="external">http://blog.david916.com/2021/02/20/innerHTML&amp;innerText&amp;textContainer/</a>
         
     </div>
     
@@ -240,7 +269,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
 
 
             
@@ -250,7 +279,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2021/02/08/ImageApp/&title=《Image图床App》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/&title=《innerHTML, innerText和textContent比较》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -260,22 +289,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2021/02/08/ImageApp/&title=《Image图床App》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/&title=《innerHTML, innerText和textContent比较》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2021/02/08/ImageApp/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Image图床App》 — David's Blog&url=http://blog.david916.com/2021/02/08/ImageApp/&via=http://blog.david916.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《innerHTML, innerText和textContent比较》 — David's Blog&url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/&via=http://blog.david916.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2021/02/08/ImageApp/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -295,21 +324,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2021/02/20/innerHTML&innerText&textContainer/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">innerHTML, innerText和textContent比较</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2020/12/30/Flashcard/" id="post-next" class="post-nav-link">
+      <a href="/2021/02/08/ImageApp/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Flashcard - A Note App with Markdown Editor Built-in</h4>
+        <h4 class="title">Image图床App</h4>
       </a>
     </div>
   
@@ -423,7 +445,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2021/02/08/ImageApp/&title=《Image图床App》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/&title=《innerHTML, innerText和textContent比较》 — David's Blog&pic=http://blog.david916.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -433,22 +455,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2021/02/08/ImageApp/&title=《Image图床App》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/&title=《innerHTML, innerText和textContent比较》 — David's Blog&source=Developer. Computer & Information Science Graduate Student @ Cornell." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2021/02/08/ImageApp/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Image图床App》 — David's Blog&url=http://blog.david916.com/2021/02/08/ImageApp/&via=http://blog.david916.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《innerHTML, innerText和textContent比较》 — David's Blog&url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/&via=http://blog.david916.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2021/02/08/ImageApp/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://blog.david916.com/2021/02/20/innerHTML&innerText&textContainer/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -459,7 +481,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aS27DMAwFwNz/0inQXRHEfY9yP5ZHqwBJZI0XBEXy8YjX83O9fk7+9frfd7u9fnvywsDAuCzjebjyA62wE9i7s2FgYNyHkWx9vNEsUB7vk5wNAwMDIyGdFYKPE0cMDAyMlpEkl0la+ccBFwMD41KM5Ciz4lqebv7SXRwDA+OCjJXGwE9//qX+BgYGxj9mPMt1fFmdNSPz8Pr2VBgYGFsz8hStLegnieOsqVBkuBgYGFsw8gcnpfz2EntWgQ8DA2NvRhtAZwWvfGijTUwxMDDuw5hdVpNSfnvpbdsVRYaLgYFxWcYsFOYhdQZreRgYGPdhtOlgG3bb4YziRWBgYNyAkY9nrVx628MVCSUGBsYNGOsDE+c2MlsqBgbG3oz8EMNQuPxtuw8GBsZ+jLYENmtezi66+agHBgbG3oyzBrzyR85eQT0zgoGBsREj2TQf21ppBrQp6ZffY2BgbM1o240rD54dMWk/YGBg3IGxUoJvR76Sol6eekZhFwMD4+KMlURtvZE5a4hiYGDcmZEX35PUbQZuB9QwMDDuwGiTs/zm2P6y/W8xFoaBgXFxxrNcSemtLZbll+e3z8XAwNiaka+23HZWLXA99cTAwNiDkQfZ/ED5iEbOw8DAwMgvtHkLYWWoom4qYGBgYARBsC3AtWH9m5eLgYGBMRrCyI81GxrDwMC4G6O9iD5Gq00o8xNiYGDszVi6Oo6aiyuNhPbSi4GBcXHGB5q5/vWnFb6YAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3a24ojMQwE0Pn/n559HVjSqZLszSwcP4Vc3D4O2ELS11c8vn+M9v1k/PzV3/O8+vTYwMPDw1ss/fnBM16y3PxZ+Zrx8PDwbvNenajJ1Mn7z0vPP83XjIeHh/d7ePvQPME8s/Hw8PD+R14SHG82K7lg8PDw8D7LyxOsbQKi/TRJhVzJteDh4eHFvFko/NnXV+p7eHh4eOuqel7g3yQaZkW4aLV4eHh4F3j71EBb5t/j62/i4eHhXeDlSYE2GZFfKqe+/+ZXeHh4eId4eRp0ljZ93oh8Q4/9Y3h4eHhr3jNyFv7mv82fuArT8fDw8C5nAJJjN1/E7CpKNuVANQ8PDw+v5LVHcN6S1W5WkozIS2J4eHh4t3l5cJy3DrQLOpXgGN4teHh4eN1pHDUB5FfC5iLJEyLFpuDh4eFd5uWB9Swhe6CU1V4SeHh4eEd5eRC8CmqDQ39W4nozJx4eHt4F3n6i2QxJyJ5vQV0Gw8PDwzvEax+52Zo27G6Lc3h4eHi3eW3ioE31bi6bffMBHh4e3lnerBC1eXweXufpiZdz4uHh4V3gzRIHedtB24KwSTrUwTQeHh7eiJcUtzbp3SKiX7QORPceHh4e3iHevhEqaTVor4S2TeHNduDh4eFd4OUNUu0hngfl+zaCfLPw8PDw9rz8kM1D51lrQnvZRKvCw8PDu8zbNwq0qYqicWq0WXh4eHj3eJsS1KZxqk1/1AMPDw/vKO+7HLPF5RmRtvkADw8P79/z9mfspjyWz3Cg6IWHh4d3lDcrO80asxL8LLXxpukKDw8P7wKvLYwl5as2/N3fZlGWGg8PD+9DvLaxYF8wG4bmeHh4eL+Al7+eBdbPaxjmqvHw8PAu8NoW0k26dtaANSvF4eHh4d3gtWmC9hDPNzGnHh54eHh46fgD+X0W26DhlboAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
